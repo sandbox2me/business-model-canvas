@@ -34,6 +34,19 @@
       width: 100%;
     }
     
+    .btn-bars{
+      height: 35px;
+      width: 35px;
+      background-color: #CECECE;
+      position: absolute;
+      top: -18px;
+      left: -18px;
+    }
+    .btn-bars a{
+      line-height: 35px;
+      color: #FFF;
+    }
+    
     div.tooltip[role="tooltip"]{
       width: 300px;
       font-weight: 200;
@@ -151,6 +164,13 @@
     <section class="col-md-6 box">
       <h2 data-toggle="tooltip" data-placement="top" title="Aquí indicaremos muy detalladamente la manera en que vamos a tener ingresos. No olvidar que hay que descontar los gastos. Deberemos tener muy claro de qué manera vamos a generar ingresos y desde qué fuentes, ya que pueden ser fijos, variables, negociaciones, según el mercado, por subasta, etc. Podemos tener dos tipos de fuentes de ingresos: a) Ingresos por transacción directa b) Ingresos recurrentes por pagos periódicos.">Revenue Streams <i class="fa fa-calculator pull-right"></i> <small>Fuentes de ingresos</small></h2>
       <p>Lorem #9</p>
+      
+      <div class="btn-bars img-circle text-center">
+        <a href="#" role="button" data-toggle="popover" data-trigger="focus" title="Piero" data-content="Blunda">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      
     </section>
   </div>
   
@@ -163,6 +183,12 @@
       $('[data-toggle="tooltip"]').tooltip({
         html: true,
         container: '#hint-container'
+      });
+      
+      $('[data-toggle="popover"]').popover({
+        html: true,
+        placement: 'top',
+        template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"><button>asd</button></div></div>'
       });
     });
   </script>
