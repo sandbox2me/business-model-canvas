@@ -191,9 +191,20 @@
         template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"><button>asd</button></div></div>'
       });
       
+      //Read data on localStorage
+      var localData = JSON.parse(localStorage.getItem("pbBMC"));
+      if(localStorage.getItem("pbBMC") !== null){
+        $('#txt-1').html(localData.keyPartness);
+        $('#txt-2').html(localData.keyActivities);
+        $('#txt-3').html(localData.keyResorces);
+        $('#txt-4').html(localData.valueProposition);
+        $('#txt-5').html(localData.customerRelationship);
+        $('#txt-6').html(localData.channels);
+        $('#txt-7').html(localData.customerSegments);
+        $('#txt-8').html(localData.revenueStreams);
+      }
       
-      
-      //Guardo los datos
+      //Save data on localStorage
       setInterval(
         function () {
           var myCanvas = {
@@ -207,9 +218,9 @@
             customerSegments: $('#txt-7').html(),
             costStructure: $('#txt-8').html(),
             revenueStreams: $('#txt-9').html(),
-            date: 'currentDate'
+            date: new Date()
           }
-          localStorage.setItem("id-1", JSON.stringify(myCanvas));
+          localStorage.setItem("pbBMC", JSON.stringify(myCanvas));
         },
         3000
       );
