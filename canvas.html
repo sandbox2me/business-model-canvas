@@ -26,6 +26,10 @@
       display: block;
     }
     
+    textarea{
+      width: 100%;
+    }
+    
     .col-md-2, .col-md-4, .col-md-6, .col-md-12{
       border: 1px solid black
     }
@@ -133,6 +137,11 @@
     <section class="col-md-4 col-md-20 box">
       <h2 data-toggle="tooltip" data-placement="bottom" title="Aquí describimos el conjunto de productos o servicios que ofrecemos que y que dan un valor a nuestro proyecto. Lo que hacemos es determinar cuál es el problema que pueden o que tienen los clientes y les ofrecemos una solución. Son las ventajas que ofrece nuestra empresa a los clientes. Ser diferentes, ser innovadores está muy bien, pero no es necesario que todas nuestras propuestas de valor también lo sean, podemos incluir acciones que ya existen en el mercado.">Value Proposition <i class="fa fa-gift pull-right"></i><small>Propuestas de valor</small></h2>
       <p id="txt-4" contenteditable="true">Lorem #4</p>
+      <div class='iiMdPreview' textarea-name='markdown' text="### Wirte _markadown_ here
+
+* First Line
+* Second Line
+* Third Line"/>
     </section>
     
     <div class="col-md-2 col-md-20 box">
@@ -176,9 +185,11 @@
   
   <div id="hint-container" class="hint-container"></div>
 
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>  
   <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/marked/lib/marked.js"></script>
+  <script src="bower_components/angular-markdown-preview/markdown_preview.js"></script>
   <script src="app.js"></script>
   <script>
     $(document).ready(function(){
