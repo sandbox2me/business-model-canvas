@@ -1,0 +1,34 @@
+{
+  "name": "html5-Bussines-Model-Canvas",
+  "version": "0.1.1",
+  "homepage": "http://www.codement.com/html5-Bussines-Model-Canvas",
+  "authors": [
+    "Piero Blunda <pieroblunda@gmail.com>"
+  ],
+  "description": "Bussiness Model Canvas made in HTML5",
+  "main": "canvas.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "Canvas",
+    "Marketing",
+    "Planning",
+    "Bussines"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-markdown-preview": "~0.1.3",
+    "bootstrap": "~3.3.2",
+    "components-font-awesome": "~4.3.0",
+    "angular": "~1.3.13",
+    "jquery": "~2.1.3"
+  }
+}
