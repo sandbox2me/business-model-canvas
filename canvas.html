@@ -8,6 +8,7 @@
   <title>Starter Template for Bootstrap 3.3.2</title>
   <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   <style>
     html{height:100%;}
     body{
@@ -29,13 +30,14 @@
     textarea{
       width: 100%;
       max-width: 100%;
+      outline: 0;
+      border: 0;
     }
     
-    /*
     *[fullscreen] textarea{
       display: none;
     }
-    */
+    
     
     nav .list-unstyled li{
       margin-left: 10px;
@@ -110,6 +112,10 @@
         width: 20%;
       }
       
+      .box{
+        background-color: #FFF;
+      }
+      
       #row-up{
         height: 60vh
       }
@@ -136,16 +142,32 @@
         overflow-y: scroll;
       }
       
-      #pbBloker{
-        position: fixed;
+      .fullscreen{
+        position: absolute;
         left: 0;
         top: 0;
         background-color:#CECECE;
-        display: none;
+        display: block;
         width: 100%;
         height:100vh;
-        background: rgba(206, 206, 206, 0.98);
         padding: 14px;
+        z-index: 1;
+        border: 0;
+        overflow-x: hidden;
+      }
+      
+      .fullscreen textarea, .fullscreen div.MdPreview-html{
+        float: left;
+        width: 47%;
+        max-width: 47%;
+        display: block;
+      }
+      .fullscreen div.MdPreview-html{
+        margin-left: 3%;
+        padding-left: 1%;
+        padding-right: 1%;
+        border: 1px solid #000;
+        height: 100%;
       }
       
       #pbBloker h1{
@@ -172,6 +194,7 @@
         <nav>
           <ul class="list-unstyled">
             <li ng-click="changeBox('box1')"><i class="fa fa-edit"></i></li>
+            <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
           </ul>
         </nav>
       </header>
@@ -186,6 +209,7 @@
             <nav>
               <ul class="list-unstyled">
                 <li ng-click="changeBox('box2')"><i class="fa fa-edit"></i></li>
+                <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
               </ul>
             </nav>
           </header>
@@ -198,6 +222,7 @@
             <nav>
               <ul class="list-unstyled">
                 <li ng-click="changeBox('box3')"><i class="fa fa-edit"></i></li>
+                <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
               </ul>
             </nav>
           </header>
@@ -209,9 +234,10 @@
     <section class="col-md-4 col-md-20 box" fullscreen ng-show="viewBox == 'box4' || viewBox == 'all'">
       <header>
         <h2 data-toggle="tooltip" data-placement="bottom" title="Aquí describimos el conjunto de productos o servicios que ofrecemos que y que dan un valor a nuestro proyecto. Lo que hacemos es determinar cuál es el problema que pueden o que tienen los clientes y les ofrecemos una solución. Son las ventajas que ofrece nuestra empresa a los clientes. Ser diferentes, ser innovadores está muy bien, pero no es necesario que todas nuestras propuestas de valor también lo sean, podemos incluir acciones que ya existen en el mercado.">Value Proposition <i class="fa fa-gift pull-right"></i><small>Propuestas de valor</small></h2>
-        <nav>
-          <ul class="list-unstyled">
+        <nav class="row">
+          <ul class="list-unstyled col-xs-12">
             <li ng-click="changeBox('box4')"><i class="fa fa-edit"></i></li>
+            <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
           </ul>
         </nav>
       </header>
@@ -226,6 +252,7 @@
             <nav>
               <ul class="list-unstyled">
                 <li ng-click="changeBox('box5')"><i class="fa fa-edit"></i></li>
+                <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
               </ul>
             </nav>
           </header>
@@ -238,6 +265,7 @@
             <nav>
               <ul class="list-unstyled">
                 <li ng-click="changeBox('box6')"><i class="fa fa-edit"></i></li>
+                <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
               </ul>
             </nav>
           </header>
@@ -252,6 +280,7 @@
         <nav>
           <ul class="list-unstyled">
             <li ng-click="changeBox('box7')"><i class="fa fa-edit"></i></li>
+            <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
           </ul>
         </nav>
       </header>
@@ -267,6 +296,7 @@
         <nav>
           <ul class="list-unstyled">
             <li ng-click="changeBox('box8')"><i class="fa fa-edit"></i></li>
+            <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
           </ul>
         </nav>
       </header>
@@ -279,6 +309,7 @@
         <nav>
           <ul class="list-unstyled">
             <li ng-click="changeBox('box9')"><i class="fa fa-edit"></i></li>
+            <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
           </ul>
         </nav>
       </header>
@@ -295,16 +326,6 @@
   
   <div id="hint-container" class="hint-container"></div>
   
-  <div id="pbBloker" ng-hide="viewVisible">
-    <div class="row">
-      <div class="col-xs-12">
-        <i class="fa fa-times fa-2x pull-right"></i>
-        <h1>Piero Blunda <small>El mejor programador del mundo</small></h1>
-        <p>asdasd as das</p>
-      </div>
-    </div>
-  </div>
-
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
