@@ -28,6 +28,32 @@
     
     textarea{
       width: 100%;
+      max-width: 100%;
+    }
+    
+    /*
+    *[fullscreen] textarea{
+      display: none;
+    }
+    */
+    
+    nav .list-unstyled li{
+      margin-left: 10px;
+      float: right;
+    }
+    nav .list-unstyled li i.fa{
+      cursor: pointer;
+    }
+    
+    div[fullscreen]{
+      position: relative;
+    }
+    
+    div[fullscreen] i.fa.fa-arrows-alt{
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
     }
     
     .col-md-2, .col-md-4, .col-md-6, .col-md-12{
@@ -109,11 +135,35 @@
         height: 100%;
         overflow-y: scroll;
       }
+      
+      #pbBloker{
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color:#CECECE;
+        display: none;
+        width: 100%;
+        height:100vh;
+        background: rgba(206, 206, 206, 0.98);
+        padding: 14px;
+      }
+      
+      #pbBloker h1{
+        margin-top: 0;
+      }
+      
+      #pbBloker h1 small{
+        display: block;
+      }
+      
+      #pbBloker i.fa.fa-times{
+        cursor: pointer;
+      }
     }
   </style>
 </head>
 
-<body class="container-fluid" ng-app="html5-canvas">
+<body class="container-fluid" ng-app="pbCanvas">
   <div id="row-up" class="row">
     
     <section class="col-md-2 col-md-20 box">
@@ -137,9 +187,15 @@
       </div>
     </div>
     
-    <section class="col-md-4 col-md-20 box">
+    <section class="col-md-4 col-md-20 box" fullscreen>
       <h2 data-toggle="tooltip" data-placement="bottom" title="Aquí describimos el conjunto de productos o servicios que ofrecemos que y que dan un valor a nuestro proyecto. Lo que hacemos es determinar cuál es el problema que pueden o que tienen los clientes y les ofrecemos una solución. Son las ventajas que ofrece nuestra empresa a los clientes. Ser diferentes, ser innovadores está muy bien, pero no es necesario que todas nuestras propuestas de valor también lo sean, podemos incluir acciones que ya existen en el mercado.">Value Proposition <i class="fa fa-gift pull-right"></i><small>Propuestas de valor</small></h2>
-      <div id="txt-4" class='iiMdPreview' textarea-name='textarea-4' text="#### Wirte _markadown_ here" fullscreen></div>
+      <nav>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-edit"></i></li>
+          <li><i class="fa fa-eye"></i></li>
+        </ul>
+      </nav>
+      <div id="txt-4" class='iiMdPreview' textarea-name='textarea-4' text="#### Wirte _markadown_ here"></div>
     </section>
     
     <div class="col-md-2 col-md-20 box">
@@ -182,6 +238,16 @@
   </div>
   
   <div id="hint-container" class="hint-container"></div>
+  
+  <div id="pbBloker" ng-hide="viewVisible">
+    <div class="row">
+      <div class="col-xs-12">
+        <i class="fa fa-times fa-2x pull-right"></i>
+        <h1>Piero Blunda <small>El mejor programador del mundo</small></h1>
+        <p>asdasd as das</p>
+      </div>
+    </div>
+  </div>
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -189,8 +255,9 @@
   <script src="bower_components/marked/lib/marked.js"></script>
   <script src="bower_components/angular-markdown-preview/markdown_preview.js"></script>
   
+  <!-- AngularJS -->
   <script src="app.js"></script>
-  <script src="js/directives/fullscreen.js"></script>
+  <script src="angular/directives/fullscreen.js"></script>
   
   <script>
     $(document).ready(function(){
