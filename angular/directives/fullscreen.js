@@ -11,7 +11,11 @@ angular.module('pbCanvas')
     return{
       restrict: 'A',
       link: function postLink(scope, element, attrs){
+        scope.viewBox = "all";
         
+        scope.changeBox = function(box) {
+          scope.viewBox = box;
+        }
       }
     };
   });
