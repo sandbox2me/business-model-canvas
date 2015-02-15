@@ -350,18 +350,18 @@
       });
       
       //Read data on localStorage
-      /*
+      
       var localData = JSON.parse(localStorage.getItem("pbBMC"));
       if(localStorage.getItem("pbBMC") !== null){
-        $('#txt-1').html(localData.keyPartness);
-        $('#txt-2').html(localData.keyActivities);
-        $('#txt-3').html(localData.keyResorces);
-        $('#txt-4').html(localData.valueProposition);
-        $('#txt-5').html(localData.customerRelationship);
-        $('#txt-6').html(localData.channels);
-        $('#txt-7').html(localData.customerSegments);
-        $('#txt-8').html(localData.costStructure);
-        $('#txt-9').html(localData.revenueStreams);
+        $('#txt-1 textarea').val(localData.keyPartness);
+        $('#txt-2 textarea').val(localData.keyActivities);
+        $('#txt-3 textarea').val(localData.keyResorces);
+        $('#txt-4 textarea').val(localData.valueProposition);
+        $('#txt-5 textarea').val(localData.customerRelationship);
+        $('#txt-6 textarea').val(localData.channels);
+        $('#txt-7 textarea').val(localData.customerSegments);
+        $('#txt-8 textarea').val(localData.costStructure);
+        $('#txt-9 textarea').val(localData.revenueStreams);
       }
       
       //Save data on localStorage
@@ -369,22 +369,21 @@
         function () {
           var myCanvas = {
             canvasName: 'My Proyect name',
-            keyPartness: $('#txt-1').html(),
-            keyActivities: $('#txt-2').html(),
-            keyResorces: $('#txt-3').html(),
-            valueProposition: $('#txt-4').html(),
-            customerRelationship: $('#txt-5').html(),
-            channels: $('#txt-6').html(),
-            customerSegments: $('#txt-7').html(),
-            costStructure: $('#txt-8').html(),
-            revenueStreams: $('#txt-9').html(),
+            keyPartness: $('#txt-1 textarea').val(),
+            keyActivities: $('#txt-2 textarea').val(),
+            keyResorces: $('#txt-3 textarea').val(),
+            valueProposition: $('#txt-4 textarea').val(),
+            customerRelationship: $('#txt-5 textarea').val(),
+            channels: $('#txt-6 textarea').val(),
+            customerSegments: $('#txt-7 textarea').val(),
+            costStructure: $('#txt-8 textarea').val(),
+            revenueStreams: $('#txt-9 textarea').val(),
             date: new Date()
           }
           localStorage.setItem("pbBMC", JSON.stringify(myCanvas));
         },
         3000
       );
-      */
     });
   </script>
 </body>
