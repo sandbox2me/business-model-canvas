@@ -8,7 +8,6 @@
   <title>Starter Template for Bootstrap 3.3.2</title>
   <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   <style>
     html{height:100%;}
     body{
@@ -198,7 +197,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-1" class='iiMdPreview' textarea-name='textarea-1' text="#### Wirte _markadown_ here"></div>
+      <div id="txt-1" class='iiMdPreview' textarea-name='textarea-1' localstorage="keyPartness"></div>
     </section>
     
     <div class="col-md-2 col-md-20 box">
@@ -213,7 +212,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-2" class='iiMdPreview' textarea-name='textarea-2' text="#### Wirte _markadown_ here"></div>
+          <div id="txt-2" class='iiMdPreview' textarea-name='textarea-2' localstorage="keyActivities"></div>
         </section>
         
         <section class="col-md-12 half-box bottom" fullscreen ng-show="viewBox == 'box3' || viewBox == 'all'">
@@ -226,7 +225,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-3" class='iiMdPreview' textarea-name='textarea-3' text="#### Wirte _markadown_ here"></div>
+          <div id="txt-3" class='iiMdPreview' textarea-name='textarea-3' localstorage="keyResorces"></div>
         </section>
       </div>
     </div>
@@ -241,7 +240,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-4" class='iiMdPreview' textarea-name='textarea-4' text="#### Wirte _markadown_ here"></div>
+      <div id="txt-4" class='iiMdPreview' textarea-name='textarea-4' localstorage="valueProposition"></div>
     </section>
     
     <div class="col-md-2 col-md-20 box">
@@ -256,7 +255,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-5" class='iiMdPreview' textarea-name='textarea-5' text="#### Wirte _markadown_ here"></div>
+          <div id="txt-5" class='iiMdPreview' textarea-name='textarea-5' localstorage="customerRelationship"></div>
         </section>
         
         <section class="col-md-12 half-box bottom" fullscreen ng-show="viewBox == 'box6' || viewBox == 'all'">
@@ -269,7 +268,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-6" class='iiMdPreview' textarea-name='textarea-6' text="#### Wirte _markadown_ here"></div>
+          <div id="txt-6" class='iiMdPreview' textarea-name='textarea-6' localstorage="channels"></div>
         </section>
       </div>
     </div>
@@ -284,7 +283,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-7" class='iiMdPreview' textarea-name='textarea-7' text="#### Wirte _markadown_ here"></div>
+      <div id="txt-7" class='iiMdPreview' textarea-name='textarea-7' localstorage="customerSegments"></div>
     </section>
     
   </div>
@@ -300,7 +299,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-8" class='iiMdPreview' textarea-name='textarea-8' text="#### Wirte _markadown_ here"></div>
+      <div id="txt-8" class='iiMdPreview' textarea-name='textarea-8' localstorage="costStructure"></div>
     </section>
     
     <section class="col-md-6 box" fullscreen ng-show="viewBox == 'box9' || viewBox == 'all'">
@@ -313,7 +312,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-9" class='iiMdPreview' textarea-name='textarea-9' text="#### Wirte _markadown_ here"></div>
+      <div id="txt-9" class='iiMdPreview' textarea-name='textarea-9' localstorage="revenueStreams"></div>
       
       <div class="btn-bars img-circle text-center">
         <a href="#" role="button" data-toggle="popover" data-trigger="focus" title="Piero" data-content="Blunda">
@@ -335,6 +334,7 @@
   <!-- AngularJS -->
   <script src="app.js"></script>
   <script src="angular/directives/fullscreen.js"></script>
+  <script src="angular/directives/iiMdPreview.js"></script>
   
   <script>
     $(document).ready(function(){
@@ -349,42 +349,26 @@
         template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"><button>asd</button></div></div>'
       });
       
-      //Read data on localStorage
-      /*
-      var localData = JSON.parse(localStorage.getItem("pbBMC"));
-      if(localStorage.getItem("pbBMC") !== null){
-        $('#txt-1').html(localData.keyPartness);
-        $('#txt-2').html(localData.keyActivities);
-        $('#txt-3').html(localData.keyResorces);
-        $('#txt-4').html(localData.valueProposition);
-        $('#txt-5').html(localData.customerRelationship);
-        $('#txt-6').html(localData.channels);
-        $('#txt-7').html(localData.customerSegments);
-        $('#txt-8').html(localData.costStructure);
-        $('#txt-9').html(localData.revenueStreams);
-      }
-      
       //Save data on localStorage
       setInterval(
         function () {
           var myCanvas = {
             canvasName: 'My Proyect name',
-            keyPartness: $('#txt-1').html(),
-            keyActivities: $('#txt-2').html(),
-            keyResorces: $('#txt-3').html(),
-            valueProposition: $('#txt-4').html(),
-            customerRelationship: $('#txt-5').html(),
-            channels: $('#txt-6').html(),
-            customerSegments: $('#txt-7').html(),
-            costStructure: $('#txt-8').html(),
-            revenueStreams: $('#txt-9').html(),
+            keyPartness: $('#txt-1 textarea').val(),
+            keyActivities: $('#txt-2 textarea').val(),
+            keyResorces: $('#txt-3 textarea').val(),
+            valueProposition: $('#txt-4 textarea').val(),
+            customerRelationship: $('#txt-5 textarea').val(),
+            channels: $('#txt-6 textarea').val(),
+            customerSegments: $('#txt-7 textarea').val(),
+            costStructure: $('#txt-8 textarea').val(),
+            revenueStreams: $('#txt-9 textarea').val(),
             date: new Date()
           }
           localStorage.setItem("pbBMC", JSON.stringify(myCanvas));
         },
         3000
       );
-      */
     });
   </script>
 </body>
