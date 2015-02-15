@@ -1,0 +1,142 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+h2 {
+  font-size: 18px;
+  cursor: pointer;
+}
+h2 small {
+  display: block;
+}
+textarea {
+  width: 100%;
+  max-width: 100%;
+  outline: 0;
+  border: 0;
+}
+*[fullscreen] textarea {
+  display: none;
+}
+nav .list-unstyled li {
+  margin-left: 10px;
+  float: right;
+}
+nav .list-unstyled li i.fa {
+  cursor: pointer;
+}
+div[fullscreen] {
+  position: relative;
+}
+div[fullscreen] i.fa.fa-arrows-alt {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.col-md-2,
+.col-md-4,
+.col-md-6,
+.col-md-12 {
+  border: 1px solid #000;
+}
+.col-md-20 {
+  width: 20%;
+}
+.btn-bars {
+  height: 35px;
+  width: 35px;
+  background-color: #cecece;
+  position: absolute;
+  top: -18px;
+  left: -18px;
+}
+.btn-bars a {
+  line-height: 35px;
+  color: #fff;
+}
+div.tooltip[role="tooltip"] {
+  width: 300px;
+  font-weight: 200;
+  z-index: 9999999999;
+}
+div.tooltip[role="tooltip"] .tooltip-inner {
+  text-align: left;
+}
+div.tooltip[role="tooltip"] .tooltip-inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+div.tooltip[role="tooltip"] .tooltip-inner ul li {
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+.hint-container {
+  z-index: 999999;
+  top: 0;
+  right: 0;
+  position: fixed;
+}
+.box {
+  background-color: #fff;
+}
+#row-up {
+  height: 60vh;
+}
+#row-up section.half-box {
+  height: 50%;
+  position: absolute;
+  border: 0;
+  overflow-y: scroll;
+}
+#row-up section.half-box.bottom {
+  border-top: 2px solid #000;
+  bottom: 0;
+}
+#row-up div.box,
+#row-up section.box {
+  height: 100%;
+  overflow-y: scroll;
+}
+#row-down {
+  height: 40vh;
+}
+#row-down section.box {
+  height: 100%;
+  overflow-y: scroll;
+}
+.fullscreen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #cecece;
+  display: block;
+  width: 100% !important;
+  height: 100vh;
+  padding: 14px;
+  z-index: 1;
+  border: 0;
+  overflow-x: hidden;
+}
+.fullscreen div.MdPreview-html {
+  margin-left: 3%;
+  padding-left: 1%;
+  padding-right: 1%;
+  border: 1px solid #000;
+  height: 100%;
+}
+.fullscreen textarea,
+.fullscreen div.MdPreview-html {
+  float: left;
+  width: 47%;
+  max-width: 47%;
+  display: block;
+}
