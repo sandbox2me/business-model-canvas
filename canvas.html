@@ -197,7 +197,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-1" class='iiMdPreview' textarea-name='textarea-1'></div>
+      <div id="txt-1" class='iiMdPreview' textarea-name='textarea-1' localstorage="keyPartness"></div>
     </section>
     
     <div class="col-md-2 col-md-20 box">
@@ -212,7 +212,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-2" class='iiMdPreview' textarea-name='textarea-2'></div>
+          <div id="txt-2" class='iiMdPreview' textarea-name='textarea-2' localstorage="keyActivities"></div>
         </section>
         
         <section class="col-md-12 half-box bottom" fullscreen ng-show="viewBox == 'box3' || viewBox == 'all'">
@@ -225,7 +225,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-3" class='iiMdPreview' textarea-name='textarea-3'></div>
+          <div id="txt-3" class='iiMdPreview' textarea-name='textarea-3' localstorage="keyResorces"></div>
         </section>
       </div>
     </div>
@@ -255,7 +255,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-5" class='iiMdPreview' textarea-name='textarea-5'></div>
+          <div id="txt-5" class='iiMdPreview' textarea-name='textarea-5' localstorage="customerRelationship"></div>
         </section>
         
         <section class="col-md-12 half-box bottom" fullscreen ng-show="viewBox == 'box6' || viewBox == 'all'">
@@ -268,7 +268,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-6" class='iiMdPreview' textarea-name='textarea-6'></div>
+          <div id="txt-6" class='iiMdPreview' textarea-name='textarea-6' localstorage="channels"></div>
         </section>
       </div>
     </div>
@@ -283,7 +283,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-7" class='iiMdPreview' textarea-name='textarea-7'></div>
+      <div id="txt-7" class='iiMdPreview' textarea-name='textarea-7' localstorage="customerSegments"></div>
     </section>
     
   </div>
@@ -299,7 +299,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-8" class='iiMdPreview' textarea-name='textarea-8'></div>
+      <div id="txt-8" class='iiMdPreview' textarea-name='textarea-8' localstorage="costStructure"></div>
     </section>
     
     <section class="col-md-6 box" fullscreen ng-show="viewBox == 'box9' || viewBox == 'all'">
@@ -312,7 +312,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-9" class='iiMdPreview' textarea-name='textarea-9'></div>
+      <div id="txt-9" class='iiMdPreview' textarea-name='textarea-9' localstorage="revenueStreams"></div>
       
       <div class="btn-bars img-circle text-center">
         <a href="#" role="button" data-toggle="popover" data-trigger="focus" title="Piero" data-content="Blunda">
@@ -348,33 +348,6 @@
         placement: 'top',
         template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"><button>asd</button></div></div>'
       });
-      
-      //Read data on localStorage
-      
-      var localData = JSON.parse(localStorage.getItem("pbBMC"));
-      if(localStorage.getItem("pbBMC") !== null){
-        /*
-        $('#txt-1 textarea').val(localData.keyPartness);
-        $('#txt-2 textarea').val(localData.keyActivities);
-        $('#txt-3 textarea').val(localData.keyResorces);
-        $('#txt-4 textarea').val(localData.valueProposition);
-        $('#txt-5 textarea').val(localData.customerRelationship);
-        $('#txt-6 textarea').val(localData.channels);
-        $('#txt-7 textarea').val(localData.customerSegments);
-        $('#txt-8 textarea').val(localData.costStructure);
-        $('#txt-9 textarea').val(localData.revenueStreams);
-        */
-        
-        $('#txt-1').attr('text', localData.keyPartness);
-        $('#txt-2').attr('text', localData.keyActivities);
-        $('#txt-3').attr('text', localData.keyResorces);
-        $('#txt-4').attr('text', localData.valueProposition);
-        $('#txt-5').attr('text', localData.customerRelationship);
-        $('#txt-6').attr('text', localData.channels);
-        $('#txt-7').attr('text', localData.customerSegments);
-        $('#txt-8').attr('text', localData.costStructure);
-        $('#txt-9').attr('text', localData.revenueStreams);
-      }
       
       //Save data on localStorage
       setInterval(

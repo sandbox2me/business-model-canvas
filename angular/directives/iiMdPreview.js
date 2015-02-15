@@ -21,6 +21,7 @@ angular.module('pbCanvas')
         if (attrs.text) {
           scope.initFromText(attrs.text);
         }
+        
         if (attrs.localstorage) {
           var localData = JSON.parse(localStorage.getItem("pbBMC"));
           if(localData !== null){
