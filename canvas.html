@@ -8,7 +8,6 @@
   <title>Starter Template for Bootstrap 3.3.2</title>
   <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   <style>
     html{height:100%;}
     body{
@@ -198,7 +197,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-1" class='iiMdPreview' textarea-name='textarea-1' text="#### Wirte _markadown_ here"></div>
+      <div id="txt-1" class='iiMdPreview' textarea-name='textarea-1'></div>
     </section>
     
     <div class="col-md-2 col-md-20 box">
@@ -213,7 +212,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-2" class='iiMdPreview' textarea-name='textarea-2' text="#### Wirte _markadown_ here"></div>
+          <div id="txt-2" class='iiMdPreview' textarea-name='textarea-2'></div>
         </section>
         
         <section class="col-md-12 half-box bottom" fullscreen ng-show="viewBox == 'box3' || viewBox == 'all'">
@@ -226,7 +225,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-3" class='iiMdPreview' textarea-name='textarea-3' text="#### Wirte _markadown_ here"></div>
+          <div id="txt-3" class='iiMdPreview' textarea-name='textarea-3'></div>
         </section>
       </div>
     </div>
@@ -241,7 +240,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-4" class='iiMdPreview' textarea-name='textarea-4' text="#### Wirte _markadown_ here"></div>
+      <div id="txt-4" class='iiMdPreview' textarea-name='textarea-4' localstorage="valueProposition"></div>
     </section>
     
     <div class="col-md-2 col-md-20 box">
@@ -256,7 +255,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-5" class='iiMdPreview' textarea-name='textarea-5' text="#### Wirte _markadown_ here"></div>
+          <div id="txt-5" class='iiMdPreview' textarea-name='textarea-5'></div>
         </section>
         
         <section class="col-md-12 half-box bottom" fullscreen ng-show="viewBox == 'box6' || viewBox == 'all'">
@@ -269,7 +268,7 @@
               </ul>
             </nav>
           </header>
-          <div id="txt-6" class='iiMdPreview' textarea-name='textarea-6' text="#### Wirte _markadown_ here"></div>
+          <div id="txt-6" class='iiMdPreview' textarea-name='textarea-6'></div>
         </section>
       </div>
     </div>
@@ -284,7 +283,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-7" class='iiMdPreview' textarea-name='textarea-7' text="#### Wirte _markadown_ here"></div>
+      <div id="txt-7" class='iiMdPreview' textarea-name='textarea-7'></div>
     </section>
     
   </div>
@@ -300,7 +299,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-8" class='iiMdPreview' textarea-name='textarea-8' text="#### Wirte _markadown_ here"></div>
+      <div id="txt-8" class='iiMdPreview' textarea-name='textarea-8'></div>
     </section>
     
     <section class="col-md-6 box" fullscreen ng-show="viewBox == 'box9' || viewBox == 'all'">
@@ -313,7 +312,7 @@
           </ul>
         </nav>
       </header>
-      <div id="txt-9" class='iiMdPreview' textarea-name='textarea-9' text="#### Wirte _markadown_ here"></div>
+      <div id="txt-9" class='iiMdPreview' textarea-name='textarea-9'></div>
       
       <div class="btn-bars img-circle text-center">
         <a href="#" role="button" data-toggle="popover" data-trigger="focus" title="Piero" data-content="Blunda">
@@ -335,6 +334,7 @@
   <!-- AngularJS -->
   <script src="app.js"></script>
   <script src="angular/directives/fullscreen.js"></script>
+  <script src="angular/directives/iiMdPreview.js"></script>
   
   <script>
     $(document).ready(function(){
@@ -353,6 +353,7 @@
       
       var localData = JSON.parse(localStorage.getItem("pbBMC"));
       if(localStorage.getItem("pbBMC") !== null){
+        /*
         $('#txt-1 textarea').val(localData.keyPartness);
         $('#txt-2 textarea').val(localData.keyActivities);
         $('#txt-3 textarea').val(localData.keyResorces);
@@ -362,6 +363,17 @@
         $('#txt-7 textarea').val(localData.customerSegments);
         $('#txt-8 textarea').val(localData.costStructure);
         $('#txt-9 textarea').val(localData.revenueStreams);
+        */
+        
+        $('#txt-1').attr('text', localData.keyPartness);
+        $('#txt-2').attr('text', localData.keyActivities);
+        $('#txt-3').attr('text', localData.keyResorces);
+        $('#txt-4').attr('text', localData.valueProposition);
+        $('#txt-5').attr('text', localData.customerRelationship);
+        $('#txt-6').attr('text', localData.channels);
+        $('#txt-7').attr('text', localData.customerSegments);
+        $('#txt-8').attr('text', localData.costStructure);
+        $('#txt-9').attr('text', localData.revenueStreams);
       }
       
       //Save data on localStorage
