@@ -30,6 +30,11 @@ app.config(function($routeProvider) {
           templateUrl: 'angular/templates/about.html',
           //controller: 'aboutController'
       })
+      //help
+      .when('/help', {
+          templateUrl: 'angular/templates/help.html',
+          //controller: 'aboutController'
+      })
       //404
       .when('/404', {
           templateUrl: 'angular/templates/404.html',
