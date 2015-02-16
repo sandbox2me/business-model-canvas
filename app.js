@@ -37,6 +37,10 @@ app.config(function($routeProvider) {
           templateUrl: 'angular/templates/help.html',
           //controller: 'aboutController'
       })
+      .when('/changelog', {
+          templateUrl: 'angular/templates/changelog.html',
+          //controller: 'aboutController'
+      })
       //404
       .when('/404', {
           templateUrl: 'angular/templates/404.html',
