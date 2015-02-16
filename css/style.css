@@ -139,3 +139,22 @@ div.tooltip[role="tooltip"] .tooltip-inner ul li {
   max-width: 47%;
   display: block;
 }
+._contact form {
+  margin-top: 30px;
+}
+._contact form input,
+._contact form textarea {
+  padding: 21px 0 21px 20px;
+  font-size: 22px;
+}
+._contact form input.form-control,
+._contact form textarea.form-control {
+  box-shadow: none;
+}
+._contact form input.form-control:hover,
+._contact form textarea.form-control:hover,
+._contact form input.form-control:focus,
+._contact form textarea.form-control:focus {
+  border: 1px solid #4ba93c;
+  outline: none;
+}
