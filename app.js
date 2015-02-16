@@ -26,6 +26,11 @@ app.config(function($routeProvider) {
           templateUrl: 'angular/templates/contact.html',
           //controller: 'contactController'
       })
+      // about page
+      .when('/about', {
+          templateUrl: 'angular/templates/about.html',
+          controller: 'aboutController'
+      })
       .otherwise({
         redirectTo: '/404.html'
       });
@@ -37,12 +42,6 @@ app.config(function($routeProvider) {
       .when('/edit', {
           templateUrl: 'page-contact.html',
           controller: 'contactController'
-      })
-  
-      // about page
-      .when('/about', {
-          templateUrl: 'page-about.html',
-          controller: 'aboutController'
       });
       */
 });
