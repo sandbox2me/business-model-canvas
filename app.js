@@ -14,7 +14,6 @@ var app = angular.module('pbCanvas', [
 app.config(function($routeProvider) {
 
     $routeProvider
-
       // home page (canvas page)
       .when('/', {
         templateUrl: 'angular/templates/canvas.html',
@@ -29,21 +28,16 @@ app.config(function($routeProvider) {
       // about page
       .when('/about', {
           templateUrl: 'angular/templates/about.html',
-          controller: 'aboutController'
+          //controller: 'aboutController'
+      })
+      //404
+      .when('/404', {
+          templateUrl: 'angular/templates/404.html',
+          //controller: 'aboutController'
       })
       .otherwise({
-        redirectTo: '/404.html'
+        redirectTo: '404'
       });
-
-      /*
-      
-  
-      // contact page
-      .when('/edit', {
-          templateUrl: 'page-contact.html',
-          controller: 'contactController'
-      });
-      */
 });
   
 /*
