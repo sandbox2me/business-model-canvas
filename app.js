@@ -37,6 +37,10 @@ app.config(function($routeProvider) {
           templateUrl: 'angular/templates/help.html',
           //controller: 'aboutController'
       })
+      .when('/view', {
+          templateUrl: 'angular/templates/view.html',
+          //controller: 'aboutController'
+      })
       .when('/changelog', {
           templateUrl: 'angular/templates/changelog.html',
           //controller: 'aboutController'
