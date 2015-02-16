@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Starter Template for Bootstrap 3.3.2</title>
+  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="container-fluid" ng-app="pbCanvas">
+  
+  <div ng-view></div>
+  
+  <div id="hint-container" class="hint-container"></div>
+  
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/marked/lib/marked.js"></script>
+  <script src="bower_components/angular-markdown-preview/markdown_preview.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  
+  <!-- AngularJS -->
+  <script src="app.js"></script>
+  <script src="angular/directives/fullscreen.js"></script>
+  <script src="angular/directives/iiMdPreview.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip({
+        html: true,
+        container: '#hint-container'
+      });
+      
+      $('[data-toggle="popover"]').popover({
+        html: true,
+        placement: 'top',
+        template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"><button>asd</button></div></div>'
+      });
+      
+      //Save data on localStorage
+      setInterval(
+        function () {
+          var myCanvas = {
+            canvasName: 'My Proyect name',
+            keyPartness: $('#txt-1 textarea').val(),
+            keyActivities: $('#txt-2 textarea').val(),
+            keyResorces: $('#txt-3 textarea').val(),
+            valueProposition: $('#txt-4 textarea').val(),
+            customerRelationship: $('#txt-5 textarea').val(),
+            channels: $('#txt-6 textarea').val(),
+            customerSegments: $('#txt-7 textarea').val(),
+            costStructure: $('#txt-8 textarea').val(),
+            revenueStreams: $('#txt-9 textarea').val(),
+            date: new Date()
+          }
+          localStorage.setItem("pbBMC", JSON.stringify(myCanvas));
+        },
+        3000
+      );
+    });
+  </script>
+</body>
+</html>
