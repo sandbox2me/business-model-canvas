@@ -19,7 +19,9 @@ app.config(function($routeProvider) {
         templateUrl: 'angular/templates/canvas.html',
         //controller: 'mainController'
       })
-      
+      .when('/canvas', {
+        redirectTo: '/'
+      })
       // contact page
       .when('/contact', {
           templateUrl: 'angular/templates/contact.html',

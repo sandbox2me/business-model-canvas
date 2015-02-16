@@ -8,12 +8,36 @@
   <title>Starter Template for Bootstrap 3.3.2</title>
   <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="components/menu/habr.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="container-fluid" ng-app="pbCanvas">
+<body ng-app="pbCanvas">
   
-  <div ng-view></div>
+  <!-- Elements -->
+  <div id="sidemenu-bg" class="sidemenu-bg hide"></div>
+
+  <ul id="sidemenu" class="sidemenu">
+    <li class="logo"><a href="#home"><i class="habra">pb</i></a></li>
+    <li><a href="#canvas"><i class="fa fa-pencil"></i></a></li>
+    <li><a href="#contact"><i class="fa fa-envelope-o"></i></a></li>
+    <li><a href="#view"><i class="fa fa-eye"></i></a></li>
+    <li><a href="#about"><i class="fa fa-user"></i></a></li>
+    <li><a href="#help"><i class="fa fa-question"></i></a></li>
+    <li class="full-height"><a id="move-up" href="#move-up" class="hide"><i class="fa fa-arrow-circle-up"></i></a><a id="move-down" href="#move-down" class="hide"><i class="fa fa-arrow-circle-down"></i></a></li>
+    <li class="has-submenu"><a href="#settings"><i class="fa fa-cog"></i></a>
+      <ul class="sidemenu-sub">
+        <li class="text">
+          <h4>Settings</h4>
+        </li>
+        <li><a href="#account">Account</a></li>
+        <li class="pull-down"><a href="#exit">Exit</a></li>
+      </ul>
+    </li>
+  </ul>
+  <!-- Elements end -->
+  
+  <div class="container-fluid" style="margin-left:71px;" ng-view></div>
   
   <div id="hint-container" class="hint-container"></div>
   
@@ -23,6 +47,7 @@
   <script src="bower_components/marked/lib/marked.js"></script>
   <script src="bower_components/angular-markdown-preview/markdown_preview.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="components/menu/habr.js"></script>
   
   <!-- AngularJS -->
   <script src="app.js"></script>
