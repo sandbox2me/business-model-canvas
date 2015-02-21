@@ -37,9 +37,9 @@ app.config(function($routeProvider) {
           templateUrl: 'angular/templates/help.html',
           //controller: 'aboutController'
       })
-      .when('/view', {
+      .when('/view/:boxname', {
           templateUrl: 'angular/templates/view.html',
-          //controller: 'aboutController'
+          controller: 'viewController'
       })
       .when('/changelog', {
           templateUrl: 'angular/templates/changelog.html',
@@ -55,10 +55,14 @@ app.config(function($routeProvider) {
       });
 });
   
-/*
+
 // CONTROLLERS ============================================
 // home page controller
-app.controller('mainController', function($scope) {
-    $scope.pageClass = 'page-home';
+app.controller("viewController", function($scope, $routeParams) {
+  $scope.params = $routeParams;
+  
+  var localData = JSON.parse(localStorage.getItem("pbBMC"));
+  if(localData !== null)
+    $scope.textMD = localData[$routeParams.boxname];
+  
 });
-*/

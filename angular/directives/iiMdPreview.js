@@ -22,12 +22,12 @@ angular.module('pbCanvas')
           scope.initFromText(attrs.text);
         }
         
-        if (attrs.localstorage) {
-          var localData = JSON.parse(localStorage.getItem("pbBMC"));
-          if(localData !== null){
-            scope.initFromText(localData[attrs.localstorage]);
-          }
-        }
+//        if (attrs.localstorage) {
+//          var localData = JSON.parse(localStorage.getItem("pbBMC"));
+//          if(localData !== null){
+//            scope.initFromText(localData[attrs.localstorage]);
+//          }
+//        }
         
         scope.textareaName = attrs.textareaName;
       }
