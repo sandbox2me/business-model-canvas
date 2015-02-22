@@ -25,7 +25,7 @@ a:hover {
   color: #3d6f87;
   text-decoration: underline;
 }
-ul {
+ul.sidemenu {
   margin: 0;
   padding: 0;
 }

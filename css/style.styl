@@ -1,10 +1,9 @@
-html
-  height 100%
+html, body
+    height 100%
 
 body
   margin 0px
   padding 0px
-  height 100%
   width 100%
   position absolute
 
@@ -59,7 +58,7 @@ div[fullscreen]
   a
     line-height 35px
     color #FFF
-
+    
 div
   &.tooltip[role="tooltip"]
     width 300px
@@ -158,5 +157,8 @@ div
   .col-lg-6:last-child
     width 100%
 ._edit
+  .col-lg-6:last-child
+    border 1px solid #CCC
   textarea
     border 1px solid #CCC
+    height calc(100% - 60px)
