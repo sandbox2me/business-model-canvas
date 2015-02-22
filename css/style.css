@@ -187,6 +187,7 @@ div.tooltip[role="tooltip"] .tooltip-inner ul li {
 }
 ._edit .col-lg-6:last-child {
   border: 1px solid #ccc;
+  overflow-y: scroll;
 }
 ._edit textarea {
   border: 1px solid #ccc;
