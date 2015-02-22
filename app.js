@@ -15,27 +15,24 @@ app.config(function($routeProvider) {
 
     $routeProvider
       // home page (canvas page)
+      .when('/canvas', {
+        redirectTo: '/'
+      })  
       .when('/', {
         templateUrl: 'angular/templates/canvas.html',
         controller: 'mainController'
       })
-      .when('/canvas', {
-        redirectTo: '/'
-      })
       // contact page
       .when('/contact', {
           templateUrl: 'angular/templates/contact.html',
-          //controller: 'contactController'
       })
       // about page
       .when('/about', {
           templateUrl: 'angular/templates/about.html',
-          //controller: 'aboutController'
       })
       //help
       .when('/help', {
           templateUrl: 'angular/templates/help.html',
-          //controller: 'aboutController'
       })
       .when('/view/:boxname', {
           templateUrl: 'angular/templates/view.html',
@@ -47,12 +44,10 @@ app.config(function($routeProvider) {
       })
       .when('/changelog', {
           templateUrl: 'angular/templates/changelog.html',
-          //controller: 'aboutController'
       })
       //404
       .when('/404', {
           templateUrl: 'angular/templates/404.html',
-          //controller: 'aboutController'
       })
       .otherwise({
         redirectTo: '404'
@@ -64,14 +59,12 @@ app.config(function($routeProvider) {
 // home page controller
 
 app.controller("mainController", function($scope, $routeParams, $location) {
-//  //Save data on localStorage
   var localData = JSON.parse(localStorage.getItem("pbBMC"));
   if(localData == undefined) {
-    $.getJSON( "template.json", function( data ) {
+    $.getJSON( "template.json", function( data ) { //Get template DB
       localStorage.setItem("pbBMC", JSON.stringify(data));
     });
   }
-  
   $scope.localdata = localData;
 });
 
@@ -86,6 +79,7 @@ app.controller("viewController", function($scope, $routeParams, $location) {
   //Read boxes information
   $.getJSON( "boxes.json", function( data ) {
     $scope.box = data[$routeParams.boxname];
+    $scope.boxes = data;
     $scope.$apply();
   });
   

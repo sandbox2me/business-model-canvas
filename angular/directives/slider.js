@@ -24,17 +24,18 @@ angular.module('pbCanvas')
           'revenueStreams'
         ];
         
-        //$('textarea').hide();
         setTimeout(function(){
+          //Set height to textarea and mirror div
           $('textarea, ._edit .col-lg-6:last-child').css('height', $(window).height() - 150);
-        }, 150);
+        }, 120);
         
+        //Change slide on arrow key Up
         $(window).on('keyup', function(e){
           
-          if( $('textarea:focus').length ){
+          //If textarea is focused do nothing
+          if( $('textarea').is(":focus") ){
             return false;
           }
-            
           
           var currentView = views.indexOf(scope.params.boxname),
               mode = '';

@@ -19,10 +19,6 @@ textarea
   outline 0
   border 0
 
-*[fullscreen]
-  textarea
-    display none
-
 nav
   .list-unstyled
     li
@@ -31,16 +27,6 @@ nav
       i
         &.fa
           cursor pointer
-
-div[fullscreen]
-  position relative
-  i
-    &.fa
-      &.fa-arrows-alt
-        position absolute
-        top 0
-        right 0
-        cursor pointer
 
 .container-fluid
   margin-left 40px
@@ -115,32 +101,6 @@ div
       overflow-y scroll
   .box:last-child
     border-right 0
-
-.fullscreen
-  position absolute
-  left 0
-  top 0
-  background-color #CECECE
-  display block
-  width 100% !important
-  height 100vh
-  padding 14px
-  z-index 1
-  border 0
-  overflow-x hidden
-  div
-    &.MdPreview-html
-      margin-left 3%
-      padding-left 1%
-      padding-right 1%
-      border 1px solid #000
-      height 100%
-
-.fullscreen textarea, .fullscreen div.MdPreview-html
-  float left
-  width 47%
-  max-width 47%
-  display block
 
 ._history, ._help
   padding-bottom 80px
