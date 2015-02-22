@@ -41,6 +41,10 @@ app.config(function($routeProvider) {
           templateUrl: 'angular/templates/view.html',
           controller: 'viewController'
       })
+      .when('/edit/:boxname', {
+          templateUrl: 'angular/templates/edit.html',
+          controller: 'viewController'
+      })
       .when('/changelog', {
           templateUrl: 'angular/templates/changelog.html',
           //controller: 'aboutController'
@@ -58,11 +62,11 @@ app.config(function($routeProvider) {
 
 // CONTROLLERS ============================================
 // home page controller
-app.controller("viewController", function($scope, $routeParams) {
+app.controller("viewController", function($scope, $routeParams, $location) {
   $scope.params = $routeParams;
   
   var localData = JSON.parse(localStorage.getItem("pbBMC"));
   if(localData !== null)
     $scope.textMD = localData[$routeParams.boxname];
-  
+    
 });

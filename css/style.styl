@@ -1,10 +1,9 @@
-html
-  height 100%
+html, body
+    height 100%
 
 body
   margin 0px
   padding 0px
-  height 100%
   width 100%
   position absolute
 
@@ -59,7 +58,7 @@ div[fullscreen]
   a
     line-height 35px
     color #FFF
-
+    
 div
   &.tooltip[role="tooltip"]
     width 300px
@@ -132,7 +131,10 @@ div
   width 47%
   max-width 47%
   display block
-  
+
+._history, ._help
+  padding-bottom 80px
+
 ._contact
   form
     margin-top 30px
@@ -148,6 +150,15 @@ div
   .mod-social
     a
       margin-right 15px
+
 ._view
+  .col-lg-6:first-child
+    display none
+  .col-lg-6:last-child
+    width 100%
+._edit
+  .col-lg-6:last-child
+    border 1px solid #CCC
   textarea
     border 1px solid #CCC
+    height calc(100% - 60px)
