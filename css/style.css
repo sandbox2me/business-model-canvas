@@ -89,9 +89,12 @@ div.tooltip[role="tooltip"] .tooltip-inner ul li {
 }
 .box {
   background-color: #fff;
+  border-top: 0;
+  border-bottom: 0;
 }
 #row-up {
   height: 60vh;
+  border-bottom: 2px solid #000;
 }
 #row-up section.half-box {
   height: 50%;
@@ -102,6 +105,9 @@ div.tooltip[role="tooltip"] .tooltip-inner ul li {
 #row-up section.half-box.bottom {
   border-top: 2px solid #000;
   bottom: 0;
+}
+#row-up .box:last-child {
+  border-right: 0;
 }
 #row-up div.box,
 #row-up section.box {
@@ -114,6 +120,9 @@ div.tooltip[role="tooltip"] .tooltip-inner ul li {
 #row-down section.box {
   height: 100%;
   overflow-y: scroll;
+}
+#row-down .box:last-child {
+  border-right: 0;
 }
 .fullscreen {
   position: absolute;
@@ -178,6 +187,7 @@ div.tooltip[role="tooltip"] .tooltip-inner ul li {
 }
 ._edit .col-lg-6:last-child {
   border: 1px solid #ccc;
+  overflow-y: scroll;
 }
 ._edit textarea {
   border: 1px solid #ccc;
