@@ -40,6 +40,9 @@ div[fullscreen] i.fa.fa-arrows-alt {
   right: 0;
   cursor: pointer;
 }
+.container-fluid {
+  margin-left: 40px;
+}
 .col-md-2,
 .col-md-4,
 .col-md-6,

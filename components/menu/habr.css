@@ -28,6 +28,7 @@ a:hover {
 ul.sidemenu {
   margin: 0;
   padding: 0;
+  width: 40px;
 }
 h4,
 p {
@@ -92,8 +93,8 @@ h4 {
 }
 .sidemenu > li > a {
   display: table-cell;
-  height: 71px;
-  width: 71px;
+  height: 40px;
+  width: 40px;
   color: #ccc;
   text-align: center;
   text-decoration: none;
@@ -102,8 +103,8 @@ h4 {
   color: #727272;
 }
 .sidemenu > li > a > .fa {
-  font-size: 28px;
-  line-height: 71px;
+  font-size: 20px;
+  line-height: 40px;
 }
 .sidemenu > li.logo {
   background-color: #a0c2ce;
@@ -145,7 +146,7 @@ h4 {
   width: 177.5px;
   position: absolute;
   top: 0;
-  left: 71px;
+  left: 40px;
   bottom: 0;
   border-left: 1px solid #e5e5e5;
   z-index: 101;
