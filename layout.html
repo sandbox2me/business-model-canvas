@@ -21,7 +21,7 @@
     <li class="logo"><a href="#home"><i class="habra">pb</i></a></li>
     <li><a href="#canvas"><i class="fa fa-pencil"></i></a></li>
     <li><a href="#contact"><i class="fa fa-envelope-o"></i></a></li>
-    <li><a href="#view"><i class="fa fa-eye"></i></a></li>
+    <li><a href="#view/keyPartness"><i class="fa fa-eye"></i></a></li>
     <li><a href="#about"><i class="fa fa-user"></i></a></li>
     <li><a href="#help"><i class="fa fa-question"></i></a></li>
     <li><a href="#changelog"><i class="fa fa-history"></i></a></li>
@@ -54,6 +54,7 @@
   <script src="app.js"></script>
   <script src="angular/directives/fullscreen.js"></script>
   <script src="angular/directives/iiMdPreview.js"></script>
+  <script src="angular/directives/slider.js"></script>
   
   <script>
     $(document).ready(function(){
@@ -73,15 +74,15 @@
         function () {
           var myCanvas = {
             canvasName: 'My Proyect name',
-            keyPartness: $('#txt-1 textarea').val(),
-            keyActivities: $('#txt-2 textarea').val(),
-            keyResorces: $('#txt-3 textarea').val(),
-            valueProposition: $('#txt-4 textarea').val(),
-            customerRelationship: $('#txt-5 textarea').val(),
-            channels: $('#txt-6 textarea').val(),
-            customerSegments: $('#txt-7 textarea').val(),
-            costStructure: $('#txt-8 textarea').val(),
-            revenueStreams: $('#txt-9 textarea').val(),
+            keyPartness: '### keyPartness',
+            keyActivities: '### keyActivities',
+            keyResorces: '### keyResorces',
+            valueProposition: '### valueProposition',
+            customerRelationship: 'customerRelationship',
+            channels: 'channels',
+            customerSegments: 'customerSegments',
+            costStructure: 'costStructure',
+            revenueStreams: 'revenueStreams',
             date: new Date()
           }
           localStorage.setItem("pbBMC", JSON.stringify(myCanvas));
