@@ -15,12 +15,12 @@ angular.module('pbCanvas')
       controller: 'Ctrl',
       scope: {},
       link: function(scope, element, attrs) {
-        if (attrs.url) {
+        
+        if (attrs.url)
           scope.initFromUrl(attrs.url);
-        }
-        if (attrs.text) {
+        
+        if (attrs.text)
           scope.initFromText(attrs.text);
-        }
         
         scope.textareaName = attrs.textareaName;
       }
