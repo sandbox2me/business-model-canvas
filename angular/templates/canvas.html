@@ -1,129 +1,131 @@
-<div id="row-up" class="row">
-  <section class="col-md-2 col-md-20 box" fullscreen ng-show="viewBox == 'box1' || viewBox == 'all'">
-    <header>
-      <h2>Key partness <i class="fa fa-venus-mars pull-right"></i><small>Asociaciones clave</small></h2>
-      <nav>
-        <ul class="list-unstyled">
-          <li ng-click="changeBox('box1')"><i class="fa fa-edit"></i></li>
-          <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
-        </ul>
-      </nav>
-    </header>
-    <div id="txt-1" class='iiMdPreview' textarea-name='textarea-1' localstorage="keyPartness"></div>
-  </section>
+<div class="_canvas">
+  <div id="row-up" class="row">
+    <section class="col-md-2 col-md-20 box" fullscreen ng-show="viewBox == 'box1' || viewBox == 'all'">
+      <header>
+        <h2>Key partness <i class="fa fa-venus-mars pull-right"></i><small>Asociaciones clave</small></h2>
+        <nav>
+          <ul class="list-unstyled">
+            <li ng-click="changeBox('box1')"><i class="fa fa-edit"></i></li>
+            <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="txt-1" class="iiMdPreview view" textarea-name='textarea-1' text="{{localdata.keyPartness}}"></div>
+    </section>
 
-  <div class="col-md-2 col-md-20 box">
-    <div class="row">
-      <section class="col-md-12 half-box" fullscreen ng-show="viewBox == 'box2' || viewBox == 'all'">
-        <header>
-          <h2 data-toggle="tooltip" data-placement="bottom" title="Las acciones más importantes para que el modelo de negocio de una empresa funcione y tenga éxito. Al igual que los recursos clave, las actividades clave serán los elementos que necesitamos sí o sí en la empresa, de esta manera podremos llegar a los mercados, a os clientes.">Key Activities <i class="fa fa-puzzle-piece pull-right"></i> <small>Actividades Clave</small></h2>
-          <nav>
-            <ul class="list-unstyled">
-              <li ng-click="changeBox('box2')"><i class="fa fa-edit"></i></li>
-              <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
-            </ul>
-          </nav>
-        </header>
-        <div id="txt-2" class='iiMdPreview' textarea-name='textarea-2' localstorage="keyActivities"></div>
-      </section>
+    <div class="col-md-2 col-md-20 box">
+      <div class="row">
+        <section class="col-md-12 half-box" fullscreen ng-show="viewBox == 'box2' || viewBox == 'all'">
+          <header>
+            <h2 data-toggle="tooltip" data-placement="bottom" title="Las acciones más importantes para que el modelo de negocio de una empresa funcione y tenga éxito. Al igual que los recursos clave, las actividades clave serán los elementos que necesitamos sí o sí en la empresa, de esta manera podremos llegar a los mercados, a os clientes.">Key Activities <i class="fa fa-puzzle-piece pull-right"></i> <small>Actividades Clave</small></h2>
+            <nav>
+              <ul class="list-unstyled">
+                <li ng-click="changeBox('box2')"><i class="fa fa-edit"></i></li>
+                <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
+              </ul>
+            </nav>
+          </header>
+          <div id="txt-2" class="iiMdPreview view" textarea-name='textarea-2' text="{{localdata.keyActivities}}"></div>
+        </section>
 
-      <section class="col-md-12 half-box bottom" fullscreen ng-show="viewBox == 'box3' || viewBox == 'all'">
-        <header>
-          <h2>Key Resorces <i class="fa fa-globe pull-right"></i> <small>Recursos clave</small></h2>
-          <nav>
-            <ul class="list-unstyled">
-              <li ng-click="changeBox('box3')"><i class="fa fa-edit"></i></li>
-              <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
-            </ul>
-          </nav>
-        </header>
-        <div id="txt-3" class='iiMdPreview' textarea-name='textarea-3' localstorage="keyResorces"></div>
-      </section>
+        <section class="col-md-12 half-box bottom" fullscreen ng-show="viewBox == 'box3' || viewBox == 'all'">
+          <header>
+            <h2>Key Resorces <i class="fa fa-globe pull-right"></i> <small>Recursos clave</small></h2>
+            <nav>
+              <ul class="list-unstyled">
+                <li ng-click="changeBox('box3')"><i class="fa fa-edit"></i></li>
+                <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
+              </ul>
+            </nav>
+          </header>
+          <div id="txt-3" class="iiMdPreview view" textarea-name='textarea-3' text="{{localdata.keyResorces}}"></div>
+        </section>
+      </div>
     </div>
+
+    <section class="col-md-4 col-md-20 box" fullscreen ng-show="viewBox == 'box4' || viewBox == 'all'">
+      <header>
+        <h2>Value Proposition <i class="fa fa-gift pull-right"></i><small>Propuestas de valor</small></h2>
+        <nav class="row">
+          <ul class="list-unstyled col-xs-12">
+            <li ng-click="changeBox('box4')"><i class="fa fa-edit"></i></li>
+            <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="txt-4" class="iiMdPreview view" textarea-name='textarea-4' text="{{localdata.valueProposition}}"></div>
+    </section>
+
+    <div class="col-md-2 col-md-20 box">
+      <div class="row">
+        <section class="col-md-12 half-box" fullscreen ng-show="viewBox == 'box5' || viewBox == 'all'">
+          <header>
+            <h2>Customer relationship <i class="fa fa-heart-o pull-right"></i><small>Relaciones con los clientes</small></h2>
+            <nav>
+              <ul class="list-unstyled">
+                <li ng-click="changeBox('box5')"><i class="fa fa-edit"></i></li>
+                <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
+              </ul>
+            </nav>
+          </header>
+          <div id="txt-5" class="iiMdPreview view" textarea-name='textarea-5' text="{{localdata.customerRelationship}}"></div>
+        </section>
+
+        <section class="col-md-12 half-box bottom" fullscreen ng-show="viewBox == 'box6' || viewBox == 'all'">
+          <header>
+            <h2>Channels <i class="fa fa-truck pull-right"></i><small>Canales</small></h2>
+            <nav>
+              <ul class="list-unstyled">
+                <li ng-click="changeBox('box6')"><i class="fa fa-edit"></i></li>
+                <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
+              </ul>
+            </nav>
+          </header>
+          <div id="txt-6" class="iiMdPreview view" textarea-name='textarea-6' text="{{localdata.channels}}"></div>
+        </section>
+      </div>
+    </div>
+
+    <section class="col-md-2 col-md-20 box" fullscreen ng-show="viewBox == 'box7' || viewBox == 'all'">
+      <header>
+        <h2>Sustomer segments <i class="fa fa-crosshairs pull-right"></i><small>Segmentos del mercado</small></h2>
+        <nav>
+          <ul class="list-unstyled">
+            <li ng-click="changeBox('box7')"><i class="fa fa-edit"></i></li>
+            <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="txt-7" class="iiMdPreview view" textarea-name='textarea-7' text="{{localdata.customerSegments}}"></div>
+    </section>
+
   </div>
 
-  <section class="col-md-4 col-md-20 box" fullscreen ng-show="viewBox == 'box4' || viewBox == 'all'">
-    <header>
-      <h2>Value Proposition <i class="fa fa-gift pull-right"></i><small>Propuestas de valor</small></h2>
-      <nav class="row">
-        <ul class="list-unstyled col-xs-12">
-          <li ng-click="changeBox('box4')"><i class="fa fa-edit"></i></li>
-          <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
-        </ul>
-      </nav>
-    </header>
-    <div id="txt-4" class='iiMdPreview' textarea-name='textarea-4' localstorage="valueProposition"></div>
-  </section>
+  <div id="row-down" class="row">
+    <section class="col-md-6 box" fullscreen ng-show="viewBox == 'box8' || viewBox == 'all'">
+      <header>
+        <h2>Cost Structure <i class="fa fa-credit-card pull-right"></i> <small>Estructura de costos</small></h2>
+        <nav>
+          <ul class="list-unstyled">
+            <li ng-click="changeBox('box8')"><i class="fa fa-edit"></i></li>
+            <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="txt-8" class="iiMdPreview view" textarea-name='textarea-8' text="{{localdata.costStructure}}"></div>
+    </section>
 
-  <div class="col-md-2 col-md-20 box">
-    <div class="row">
-      <section class="col-md-12 half-box" fullscreen ng-show="viewBox == 'box5' || viewBox == 'all'">
-        <header>
-          <h2>Customer relationship <i class="fa fa-heart-o pull-right"></i><small>Relaciones con los clientes</small></h2>
-          <nav>
-            <ul class="list-unstyled">
-              <li ng-click="changeBox('box5')"><i class="fa fa-edit"></i></li>
-              <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
-            </ul>
-          </nav>
-        </header>
-        <div id="txt-5" class='iiMdPreview' textarea-name='textarea-5' localstorage="customerRelationship"></div>
-      </section>
-
-      <section class="col-md-12 half-box bottom" fullscreen ng-show="viewBox == 'box6' || viewBox == 'all'">
-        <header>
-          <h2>Channels <i class="fa fa-truck pull-right"></i><small>Canales</small></h2>
-          <nav>
-            <ul class="list-unstyled">
-              <li ng-click="changeBox('box6')"><i class="fa fa-edit"></i></li>
-              <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
-            </ul>
-          </nav>
-        </header>
-        <div id="txt-6" class='iiMdPreview' textarea-name='textarea-6' localstorage="channels"></div>
-      </section>
-    </div>
+    <section class="col-md-6 box" fullscreen ng-show="viewBox == 'box9' || viewBox == 'all'">
+      <header>
+        <h2>Revenue Streams <i class="fa fa-calculator pull-right"></i> <small>Fuentes de ingresos</small></h2>
+        <nav>
+          <ul class="list-unstyled">
+            <li ng-click="changeBox('box9')"><i class="fa fa-edit"></i></li>
+            <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="txt-9" class="iiMdPreview view" textarea-name='textarea-9' text="{{localdata.revenueStreams}}"></div>
+    </section>
   </div>
-
-  <section class="col-md-2 col-md-20 box" fullscreen ng-show="viewBox == 'box7' || viewBox == 'all'">
-    <header>
-      <h2>Sustomer segments <i class="fa fa-crosshairs pull-right"></i><small>Segmentos del mercado</small></h2>
-      <nav>
-        <ul class="list-unstyled">
-          <li ng-click="changeBox('box7')"><i class="fa fa-edit"></i></li>
-          <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
-        </ul>
-      </nav>
-    </header>
-    <div id="txt-7" class='iiMdPreview' textarea-name='textarea-7' localstorage="customerSegments"></div>
-  </section>
-
-</div>
-
-<div id="row-down" class="row">
-  <section class="col-md-6 box" fullscreen ng-show="viewBox == 'box8' || viewBox == 'all'">
-    <header>
-      <h2>Cost Structure <i class="fa fa-credit-card pull-right"></i> <small>Estructura de costos</small></h2>
-      <nav>
-        <ul class="list-unstyled">
-          <li ng-click="changeBox('box8')"><i class="fa fa-edit"></i></li>
-          <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
-        </ul>
-      </nav>
-    </header>
-    <div id="txt-8" class='iiMdPreview' textarea-name='textarea-8' localstorage="costStructure"></div>
-  </section>
-
-  <section class="col-md-6 box" fullscreen ng-show="viewBox == 'box9' || viewBox == 'all'">
-    <header>
-      <h2>Revenue Streams <i class="fa fa-calculator pull-right"></i> <small>Fuentes de ingresos</small></h2>
-      <nav>
-        <ul class="list-unstyled">
-          <li ng-click="changeBox('box9')"><i class="fa fa-edit"></i></li>
-          <li ng-click="changeBox('all')"><i class="fa fa-times"></i></li>
-        </ul>
-      </nav>
-    </header>
-    <div id="txt-9" class='iiMdPreview' textarea-name='textarea-9' localstorage="revenueStreams"></div>
-  </section>
 </div>

@@ -82,6 +82,7 @@ app.controller("mainController", function($scope, $routeParams, $location) {
     }
     localStorage.setItem("pbBMC", JSON.stringify(myCanvas));
   }
+  $scope.localdata = localData;
 });
 
 app.controller("viewController", function($scope, $routeParams, $location) {

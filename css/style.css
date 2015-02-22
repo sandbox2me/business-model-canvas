@@ -165,10 +165,12 @@ div.tooltip[role="tooltip"] .tooltip-inner ul li {
 ._about .mod-social a {
   margin-right: 15px;
 }
-._view .col-lg-6:first-child {
+._view .col-lg-6:first-child,
+._canvas .col-lg-6:first-child {
   display: none;
 }
-._view .col-lg-6:last-child {
+._view .col-lg-6:last-child,
+._canvas .col-lg-6:last-child {
   width: 100%;
 }
 ._edit .col-lg-6:last-child {
