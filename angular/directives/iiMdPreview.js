@@ -9,7 +9,7 @@
 angular.module('pbCanvas')
   .directive('iiMdPreview', function() {
     return {
-      templateUrl: 'angular/templates/edit-md.html',
+      templateUrl: 'angular/templates/mirror-md.html',
       restrict: 'C',
       replace: true,
       controller: 'Ctrl',
