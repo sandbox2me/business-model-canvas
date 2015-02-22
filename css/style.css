@@ -139,6 +139,10 @@ div.tooltip[role="tooltip"] .tooltip-inner ul li {
   max-width: 47%;
   display: block;
 }
+._history,
+._help {
+  padding-bottom: 80px;
+}
 ._contact form {
   margin-top: 30px;
 }

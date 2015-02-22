@@ -68,12 +68,5 @@ app.controller("viewController", function($scope, $routeParams, $location) {
   var localData = JSON.parse(localStorage.getItem("pbBMC"));
   if(localData !== null)
     $scope.textMD = localData[$routeParams.boxname];
-  
-//  setTimeout(function(){
-//    if( $location.path().match('\/view\/') ){
-//      $('.iiMdPreview').children('.col-lg-6:first-child').addClass('hidden');
-//      //$('.iiMdPreview').children('.col-lg-6:last-child').removeClass('col-lg-6').addClass('col-lg-12');
-//    }
-//  },110);
     
 });
