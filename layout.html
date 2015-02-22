@@ -56,41 +56,5 @@
   <script src="angular/directives/fullscreen.js"></script>
   <script src="angular/directives/iiMdPreview.js"></script>
   <script src="angular/directives/slider.js"></script>
-  
-  <script>
-    $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip({
-        html: true,
-        container: '#hint-container'
-      });
-      
-      $('[data-toggle="popover"]').popover({
-        html: true,
-        placement: 'top',
-        template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"><button>asd</button></div></div>'
-      });
-      
-      //Save data on localStorage
-      setInterval(
-        function () {
-          var myCanvas = {
-            canvasName: 'My Proyect name',
-            keyPartness: '### keyPartness',
-            keyActivities: '### keyActivities',
-            keyResorces: '### keyResorces',
-            valueProposition: '### valueProposition',
-            customerRelationship: 'customerRelationship',
-            channels: 'channels',
-            customerSegments: 'customerSegments',
-            costStructure: 'costStructure',
-            revenueStreams: 'revenueStreams',
-            date: new Date()
-          }
-          localStorage.setItem("pbBMC", JSON.stringify(myCanvas));
-        },
-        3000
-      );
-    });
-  </script>
 </body>
 </html>
