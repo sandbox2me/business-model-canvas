@@ -1,0 +1,47 @@
+{
+    "keyPartness": {
+        "subtitle": "Asociaciones clave",
+        "icon": "fa-venus-mars",
+        "explanation": ""
+    },
+    "keyActivities": {
+        "subtitle": "Actividades Clave",
+        "icon": "fa-puzzle-piece",
+        "explanation": ""
+    },
+    "keyResorces": {
+        "subtitle": "Recursos clave",
+        "icon": "fa-globe",
+        "explanation": ""
+    },
+    "valueProposition": {
+        "subtitle": "Propuestas de valor",
+        "icon": "fa-gift",
+        "explanation": ""
+    },
+    "customerRelationship": {
+        "subtitle": "Relaciones con los clientes",
+        "icon": "fa-heart-o",
+        "explanation": ""
+    },
+    "channels": {
+        "subtitle": "Canales",
+        "icon": "fa-truck",
+        "explanation": ""
+    },
+    "customerSegments": {
+        "subtitle": "Segmentos del mercado",
+        "icon": "fa-crosshairs",
+        "explanation": ""
+    },
+    "costStructure": {
+        "subtitle": "Estructura de costos",
+        "icon": "fa-credit-card",
+        "explanation": ""
+    },
+    "revenueStreams": {
+        "subtitle": "Fuentes de ingresos",
+        "icon": "fa-calculator",
+        "explanation": ""
+    }
+}

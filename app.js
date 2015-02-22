@@ -67,21 +67,11 @@ app.controller("mainController", function($scope, $routeParams, $location) {
 //  //Save data on localStorage
   var localData = JSON.parse(localStorage.getItem("pbBMC"));
   if(localData == undefined) {
-    var myCanvas = {
-      canvasName: '',
-      keyPartness: '',
-      keyActivities: '',
-      keyResorces: '',
-      valueProposition: '',
-      customerRelationship: '',
-      channels: '',
-      customerSegments: '',
-      costStructure: '',
-      revenueStreams: '',
-      date: new Date()
-    }
-    localStorage.setItem("pbBMC", JSON.stringify(myCanvas));
+    $.getJSON( "template.json", function( data ) {
+      localStorage.setItem("pbBMC", JSON.stringify(data));
+    });
   }
+  
   $scope.localdata = localData;
 });
 
@@ -92,7 +82,13 @@ app.controller("viewController", function($scope, $routeParams, $location) {
   var localData = JSON.parse(localStorage.getItem("pbBMC"));
   if(localData !== undefined)
     $scope.textMD = localData[$routeParams.boxname];
-    
+  
+  //Read boxes information
+  $.getJSON( "boxes.json", function( data ) {
+    $scope.box = data[$routeParams.boxname];
+    $scope.$apply();
+  });
+  
   //Write localstorage
   if( $location.path().match('\/edit\/') ) {
     setInterval(
