@@ -17,7 +17,7 @@ app.config(function($routeProvider) {
       // home page (canvas page)
       .when('/', {
         templateUrl: 'angular/templates/canvas.html',
-        //controller: 'mainController'
+        controller: 'mainController'
       })
       .when('/canvas', {
         redirectTo: '/'
@@ -62,11 +62,45 @@ app.config(function($routeProvider) {
 
 // CONTROLLERS ============================================
 // home page controller
+
+app.controller("mainController", function($scope, $routeParams, $location) {
+//  //Save data on localStorage
+  var localData = JSON.parse(localStorage.getItem("pbBMC"));
+  if(localData == undefined) {
+    var myCanvas = {
+      canvasName: '',
+      keyPartness: '',
+      keyActivities: '',
+      keyResorces: '',
+      valueProposition: '',
+      customerRelationship: '',
+      channels: '',
+      customerSegments: '',
+      costStructure: '',
+      revenueStreams: '',
+      date: new Date()
+    }
+    localStorage.setItem("pbBMC", JSON.stringify(myCanvas));
+  }
+  $scope.localdata = localData;
+});
+
 app.controller("viewController", function($scope, $routeParams, $location) {
   $scope.params = $routeParams;
   
+  //Read localstorage
   var localData = JSON.parse(localStorage.getItem("pbBMC"));
-  if(localData !== null)
+  if(localData !== undefined)
     $scope.textMD = localData[$routeParams.boxname];
     
+  //Write localstorage
+  if( $location.path().match('\/edit\/') ) {
+    setInterval(
+      function () {
+        localData[$routeParams.boxname] = $('textarea').val();
+        localStorage.setItem("pbBMC", JSON.stringify(localData));
+      },
+      3000
+    );
+  }
 });
