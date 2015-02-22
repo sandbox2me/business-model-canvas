@@ -9,7 +9,7 @@
 angular.module('pbCanvas')
   .directive('iiMdPreview', function() {
     return {
-      template: "<div><textarea class='MdPreview-markdown' name='{{textareaName}}' ng-model='markdown' ng-change='md2Html()'></textarea><div class='MdPreview-html' ng-bind-html='htmlSafe' /></div>",
+      templateUrl: 'angular/templates/edit-md.html',
       restrict: 'C',
       replace: true,
       controller: 'Ctrl',
