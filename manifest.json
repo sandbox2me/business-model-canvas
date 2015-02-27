@@ -1,0 +1,14 @@
+{
+  "name": "pbCanvas",
+  "description": "html5 Bussines Model Canvas",
+  "version": "1.0",
+  "manifest_version": 2,
+  "icons": {
+     "256": "icons/icon256.png"
+  },
+  "app": {
+    "launch": {
+      "local_path": "layout.html"
+    }
+  }
+}
