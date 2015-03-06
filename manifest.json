@@ -14,7 +14,15 @@
     }
   },
   "permissions": [
-    "unlimitedStorage",
-    "notifications"
-  ]
+    "app.window",
+    "<all_urls>",
+    "storage"
+  ],
+  "app": {
+    "background": {
+      "scripts": [
+        "js/main.js"
+      ]
+    }
+  }
 }
