@@ -75,29 +75,7 @@ app.controller("mainController", function($scope, $routeParams, $location) {
     };
     console.log(localData);
     localStorage.setItem("pbBMC", JSON.stringify(localData));
-}
-
-  
-//  //LocalStorage
-//  var localdata = '';
-//  if(chrome.app.window){
-//    chrome.storage.local.set({key: 'Piero'}, function() {console.log('Settings saved');});
-//    chrome.storage.local.get('key', function(localdata){
-//      $('#probando').html('ChromeApp '+localdata.key);
-//    });
-//    
-//  }else{
-//    dataobject = JSON.stringify({key: 'Piero'});
-//    localStorage.setItem('pbStorage', dataobject);
-//    localdata = JSON.parse(localStorage.getItem('pbStorage'));
-//    $('#probando').html('WebApp '+localdata.key);
-//  }
-  
-//  var localData = JSON.parse(localStorage.getItem("pbBMC"));
-//  if(localData == undefined) {
-//    $.getJSON( "template.json", function( data ) { //Get template DB
-//      localStorage.setItem("pbBMC", JSON.stringify(data));
-//    });
-//  }
-//  $scope.localdata = localData;
+  }else{
+    $scope.localdata = localData;
+  }
 });

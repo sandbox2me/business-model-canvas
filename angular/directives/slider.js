@@ -27,7 +27,8 @@ angular.module('pbCanvas')
         
         //Making slider
         var localData = JSON.parse(localStorage.getItem("pbBMC"));
-        scope.textMD = localData[scope.currentBox];
+        if( localData !== null )
+          scope.textMD = localData[scope.currentBox];
         
         
         
