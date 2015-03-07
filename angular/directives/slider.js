@@ -45,7 +45,7 @@ angular.module('pbCanvas')
         
         
         //Making slider
-        /*
+        
         var views = [
           'keyPartness',
           'keyActivities',
@@ -71,7 +71,7 @@ angular.module('pbCanvas')
             return false;
           }
           
-          var currentView = views.indexOf(scope.params.boxname),
+          var currentView = views.indexOf(scope.currentBox),
               mode = '';
           if( location.path().match('\/view\/') )
             mode = 'view';
@@ -94,7 +94,6 @@ angular.module('pbCanvas')
           }
           scope.$apply();
         });
-        */
       }
     };
   }]);

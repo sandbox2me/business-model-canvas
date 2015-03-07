@@ -13,9 +13,6 @@ angular.module('pbCanvas')
         setInterval(
           function () {
             var localData = JSON.parse(localStorage.getItem("pbBMC"));
-            
-            //console.log('scope.currentBox: ' + scope.currentBox);
-            
             localData[scope.currentBox] = element.find('textarea').val();
             if(chrome.app.window){
               //ChromeApp
