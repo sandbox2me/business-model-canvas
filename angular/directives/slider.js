@@ -11,7 +11,41 @@ angular.module('pbCanvas')
     return{
       restrict: 'A',
       link: function postLink(scope, element, attrs){
+        console.log('slider');
         
+        //Read boxes information
+        var currentBox = '';
+        
+        if( location.path().match(/view/gi) )
+          scope.currentBox = location.path().replace('/view/', '');
+        
+        if( location.path().match(/edit/gi) )
+          scope.currentBox = location.path().replace('/edit/', '');
+        
+        
+        
+        var localData = JSON.parse(localStorage.getItem("pbBMC"));
+        if(localData == null){
+          localData = {
+            keyPartness: "",
+            keyActivities: "",
+            keyResorces: "",
+            valueProposition: "",
+            customerRelationship: "",
+            channels: "",
+            customerSegments: "",
+            costStructure: "",
+            revenueStreams: ""
+          };
+          console.log(localData);
+          localStorage.setItem("pbBMC", JSON.stringify(localData));
+        }else{
+          scope.textMD = localData[scope.currentBox];
+        }
+        
+        
+        //Making slider
+        /*
         var views = [
           'keyPartness',
           'keyActivities',
@@ -60,6 +94,7 @@ angular.module('pbCanvas')
           }
           scope.$apply();
         });
+        */
       }
     };
   }]);

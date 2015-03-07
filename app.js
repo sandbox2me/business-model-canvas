@@ -83,30 +83,3 @@ app.controller("mainController", function($scope, $routeParams, $location) {
 //  }
 //  $scope.localdata = localData;
 });
-
-app.controller("viewController", function($scope, $routeParams, $location) {
-//  $scope.params = $routeParams;
-//  
-//  //Read localstorage
-//  var localData = JSON.parse(localStorage.getItem("pbBMC"));
-//  if(localData !== undefined)
-//    $scope.textMD = localData[$routeParams.boxname];
-//  
-//  //Read boxes information
-//  $.getJSON( "boxes.json", function( data ) {
-//    $scope.box = data[$routeParams.boxname];
-//    $scope.boxes = data;
-//    $scope.$apply();
-//  });
-  
-  //Write localstorage
-//  if( $location.path().match('\/edit\/') ) {
-//    setInterval(
-//      function () {
-//        localData[$routeParams.boxname] = $('textarea').val();
-//        localStorage.setItem("pbBMC", JSON.stringify(localData));
-//      },
-//      3000
-//    );
-//  }
-});
