@@ -12,17 +12,17 @@ angular.module('pbCanvas')
         console.log('lstorage');
         var localData = '';
         setInterval(function(){
-          localData = JSON.parse(localStorage.getItem("pbBMC"));
-          localData[scope.currentBox.key] = element.find('textarea').val();
-          if(chrome.app.window){
-            //ChromeApp
-            chrome.storage.local.get('pbBMC', function(localdata){
-              console.log('Saving data');
-            });
-          }else{
-            //WebApp
-            localStorage.setItem("pbBMC", JSON.stringify(localData));
-          }
+//          localData = JSON.parse(localStorage.getItem("pbBMC"));
+//          localData[scope.currentBox.key] = element.find('textarea').val();
+//          if(chrome.app.window){
+//            //ChromeApp
+//            chrome.storage.local.get('pbBMC', function(localData){
+//              console.log('Getting data');
+//            });
+//          }else{
+//            //WebApp
+//            localStorage.setItem("pbBMC", JSON.stringify(localData));
+//          }
         }, 3000);
       }
     };

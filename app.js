@@ -60,22 +60,24 @@ app.config(function($routeProvider) {
 
 app.controller("mainController", function($scope, $routeParams, $location) {
   //Setting up defaults values
-  var localData = JSON.parse(localStorage.getItem("pbBMC"));
-  if(localData == null){
-    localData = {
-      keyPartness: "",
-      keyActivities: "",
-      keyResorces: "",
-      valueProposition: "",
-      customerRelationship: "",
-      channels: "",
-      customerSegments: "",
-      costStructure: "",
-      revenueStreams: ""
-    };
-    console.log(localData);
-    localStorage.setItem("pbBMC", JSON.stringify(localData));
+  
+  if(chrome.app.window){
+    //ChromeApp
+    chrome.storage.local.get('pbBMC', function(localData){
+      if(localData == null){
+        $.getJSON('template.json', function(localData){
+          chrome.storage.local.set('pbBMC', function(localData){});
+        });
+      }
+    });
   }else{
-    $scope.localdata = localData;
+    //WebApp
+    var localData = JSON.parse(localStorage.getItem("pbBMC"));
+    if(localData == null){
+        $.getJSON('template.json', function(localData){
+          localStorage.setItem("pbBMC", JSON.stringify(localData));
+        });
+      }
   }
+  $scope.localdata = localData;
 });
