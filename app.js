@@ -59,21 +59,39 @@ app.config(function($routeProvider) {
 // home page controller
 
 app.controller("mainController", function($scope, $routeParams, $location) {
+  //Setting up defaults values
+  var localData = JSON.parse(localStorage.getItem("pbBMC"));
+  if(localData == null){
+    localData = {
+      keyPartness: "",
+      keyActivities: "",
+      keyResorces: "",
+      valueProposition: "",
+      customerRelationship: "",
+      channels: "",
+      customerSegments: "",
+      costStructure: "",
+      revenueStreams: ""
+    };
+    console.log(localData);
+    localStorage.setItem("pbBMC", JSON.stringify(localData));
+}
 
-  //LocalStorage
-  var localdata = '';
-  if(chrome.app.window){
-    chrome.storage.local.set({key: 'Piero'}, function() {console.log('Settings saved');});
-    chrome.storage.local.get('key', function(localdata){
-      $('#probando').html('ChromeApp '+localdata.key);
-    });
-    
-  }else{
-    dataobject = JSON.stringify({key: 'Piero'});
-    localStorage.setItem('pbStorage', dataobject);
-    localdata = JSON.parse(localStorage.getItem('pbStorage'));
-    $('#probando').html('WebApp '+localdata.key);
-  }
+  
+//  //LocalStorage
+//  var localdata = '';
+//  if(chrome.app.window){
+//    chrome.storage.local.set({key: 'Piero'}, function() {console.log('Settings saved');});
+//    chrome.storage.local.get('key', function(localdata){
+//      $('#probando').html('ChromeApp '+localdata.key);
+//    });
+//    
+//  }else{
+//    dataobject = JSON.stringify({key: 'Piero'});
+//    localStorage.setItem('pbStorage', dataobject);
+//    localdata = JSON.parse(localStorage.getItem('pbStorage'));
+//    $('#probando').html('WebApp '+localdata.key);
+//  }
   
 //  var localData = JSON.parse(localStorage.getItem("pbBMC"));
 //  if(localData == undefined) {
