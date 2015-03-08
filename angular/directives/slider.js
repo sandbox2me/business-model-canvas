@@ -27,13 +27,14 @@ angular.module('pbCanvas')
         
         if(chrome.app.window){
           chrome.storage.local.get('pbBMC', function(localData){
-            if( localData !== null )
+            console.log(localData);
+            //if( localData !== null )
             scope.textMD = localData[scope.currentBox];
           });
         }else{
-          var localData = JSON.parse(localStorage.getItem("pbBMC"));
-          if( localData !== null )
-            scope.textMD = localData[scope.currentBox];
+//          var localData = JSON.parse(localStorage.getItem("pbBMC"));
+//          if( localData !== null )
+//            scope.textMD = localData[scope.currentBox];
         }
         
         

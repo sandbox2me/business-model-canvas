@@ -12,17 +12,30 @@ angular.module('pbCanvas')
         console.log('lstorage');
         var localData = '';
         setInterval(function(){
-//          localData = JSON.parse(localStorage.getItem("pbBMC"));
-//          localData[scope.currentBox.key] = element.find('textarea').val();
-//          if(chrome.app.window){
-//            //ChromeApp
-//            chrome.storage.local.get('pbBMC', function(localData){
-//              console.log('Getting data');
-//            });
-//          }else{
-//            //WebApp
+          
+          if(chrome.app.window){
+            //ChromeApp
+            chrome.storage.local.get('pbBMC', function(localData){
+              
+              //Aux
+              localData[scope.currentBox.key] = element.find('textarea').val();
+              
+              //Remove
+//              chrome.storage.local.remove("pbBMC", function(aux){
+//                console.log('Getting data');
+//              });
+              
+              //Set
+              chrome.storage.local.set({pbBMC:localData}, function(localData){
+                console.log('Getting data');
+              });
+            });
+          }else{
+            //WebApp
+//            localData = JSON.parse(localStorage.getItem("pbBMC"));
+//            localData[scope.currentBox.key] = element.find('textarea').val();
 //            localStorage.setItem("pbBMC", JSON.stringify(localData));
-//          }
+          }
         }, 3000);
       }
     };
