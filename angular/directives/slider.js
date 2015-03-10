@@ -14,27 +14,13 @@ angular.module('pbCanvas')
         
         //Read boxes information
         if( location.path().match(/view/gi) ) {
-          scope.currentBox = location.path().replace('/view/', '');
           var mode = 'view';
         }
         
         if( location.path().match(/edit/gi) ) {
-          scope.currentBox = location.path().replace('/edit/', '');
           var mode = 'edit';
         }
-        
         var currentBox = scope.currentBox;
-        console.log('A');
-        if(chrome.app.window){
-          chrome.storage.local.get('pbBMC', function(localData){
-            //if( localData !== null )
-              scope.textMD = localData.pbBMC[scope.currentBox.key];
-          });
-        }else{
-          var localData = JSON.parse(localStorage.getItem("pbBMC"));
-          if( localData !== null )
-            scope.textMD = localData[scope.currentBox];
-        }
         
         //Making slider
         var views = [
@@ -61,7 +47,6 @@ angular.module('pbCanvas')
           //If textarea is focused do nothing
           if( $('textarea').is(":focus") )
             return false;
-          console.log('H');
           
           var indexCurrentView = views.indexOf(currentBox);
           

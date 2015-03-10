@@ -2,7 +2,8 @@
 // congigure the modules to include on our app
 var app = angular.module('pbCanvas', [
   'ngRoute',
-  'evgenyneu.markdown-preview'
+  'evgenyneu.markdown-preview',
+  'hc.marked'
 ]);
 
 

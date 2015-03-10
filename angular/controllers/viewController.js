@@ -7,8 +7,8 @@ app.controller("viewController", function($scope, $routeParams, $location) {
     $scope.boxes = data;
     
     setTimeout(function(){
-      console.log('scome Ctrl: '+ $scope.textMD, $scope);
       $scope.$apply();
+      console.log($scope.textMD);
     }, 1);
   });
 });
