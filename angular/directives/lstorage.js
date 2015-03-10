@@ -16,17 +16,18 @@ angular.module('pbCanvas')
           if(chrome.app.window){
             //ChromeApp
             chrome.storage.local.get('pbBMC', function(localData){
-              
+              console.log('Antes: ' + localData);
               //Aux
-              localData[scope.currentBox.key] = element.find('textarea').val();
+              localData.pbBMC[scope.currentBox.key] = element.find('textarea').val();
+              console.log('Despues: ' + localData);
               
-              //Remove
+//              //Remove
 //              chrome.storage.local.remove("pbBMC", function(aux){
-//                console.log('Getting data');
+//                console.log('remove', aux);
 //              });
               
               //Set
-              chrome.storage.local.set({pbBMC:localData}, function(localData){
+              chrome.storage.local.set({pbBMC:localData.pbBMC}, function(localData){
                 console.log('Getting data');
               });
             });

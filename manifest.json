@@ -21,7 +21,8 @@
   "app": {
     "background": {
       "scripts": [
-        "js/main.js"
+        "js/main.js",
+        "js/index.js"
       ]
     }
   }

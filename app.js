@@ -62,16 +62,20 @@ app.controller("mainController", function($scope, $routeParams, $location) {
   //Setting up defaults values
   
   if(chrome.app.window){
-    //ChromeApp
-    var existeStorage = 0;
-    chrome.storage.local.get('pbBMC', function(cb){
-      existeStorage = 1;
+    $.getJSON('template.json', function(localData){
+      chrome.storage.local.set({pbBMC:localData}, function(cb){});
     });
-    if( !existeStorage ){
-      $.getJSON('template.json', function(localData){
-        chrome.storage.local.set({pbBMC:localData}, function(cb){});
-      });
-    }
+    //ChromeApp
+//    var existeStorage = 0;
+//    chrome.storage.local.get('pbBMC', function(cb){
+//      existeStorage = 1;
+//      console.log(cb);
+//    });
+//    if( !existeStorage ){
+//      $.getJSON('template.json', function(localData){
+//        chrome.storage.local.set({pbBMC:localData}, function(cb){});
+//      });
+//    }
     
 //    chrome.storage.local.get('pbBMC', function(localData){
 //      if (chrome.extension.lastError) {

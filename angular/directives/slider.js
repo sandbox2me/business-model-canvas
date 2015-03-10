@@ -17,26 +17,24 @@ angular.module('pbCanvas')
           scope.currentBox = location.path().replace('/view/', '');
           var mode = 'view';
         }
-
+        
         if( location.path().match(/edit/gi) ) {
           scope.currentBox = location.path().replace('/edit/', '');
           var mode = 'edit';
         }
-
-        var currentBox = scope.currentBox;
         
+        var currentBox = scope.currentBox;
+        console.log('A');
         if(chrome.app.window){
           chrome.storage.local.get('pbBMC', function(localData){
-            console.log(localData);
             //if( localData !== null )
-            scope.textMD = localData[scope.currentBox];
+              scope.textMD = localData.pbBMC[scope.currentBox.key];
           });
         }else{
-//          var localData = JSON.parse(localStorage.getItem("pbBMC"));
-//          if( localData !== null )
-//            scope.textMD = localData[scope.currentBox];
+          var localData = JSON.parse(localStorage.getItem("pbBMC"));
+          if( localData !== null )
+            scope.textMD = localData[scope.currentBox];
         }
-        
         
         //Making slider
         var views = [
@@ -51,12 +49,11 @@ angular.module('pbCanvas')
           'revenueStreams'
         ];
         
-        console.log('scope.currentBox: '+scope.currentBox);
-        
         //Set height to textarea and mirror div
         setTimeout(function(){
           $('textarea, ._edit .col-lg-6:last-child').css('height', $(window).height() - 150);
         }, 120);
+        
         
         //Change slide on arrow key Up
         $(window).on('keyup', function(e){
@@ -64,9 +61,9 @@ angular.module('pbCanvas')
           //If textarea is focused do nothing
           if( $('textarea').is(":focus") )
             return false;
+          console.log('H');
           
           var indexCurrentView = views.indexOf(currentBox);
-          
           
           switch(e.keyCode){
             case 37: //Left arrow
@@ -84,6 +81,7 @@ angular.module('pbCanvas')
           }
           scope.$apply();
         });
+        
       }
     };
   }]);
