@@ -2,7 +2,8 @@
 // congigure the modules to include on our app
 var app = angular.module('pbCanvas', [
   'ngRoute',
-  'evgenyneu.markdown-preview'
+  'evgenyneu.markdown-preview',
+  'hc.marked'
 ]);
 
 
@@ -59,38 +60,48 @@ app.config(function($routeProvider) {
 // home page controller
 
 app.controller("mainController", function($scope, $routeParams, $location) {
-  var localData = JSON.parse(localStorage.getItem("pbBMC"));
-  if(localData == undefined) {
-    $.getJSON( "template.json", function( data ) { //Get template DB
-      localStorage.setItem("pbBMC", JSON.stringify(data));
+  //Setting up defaults values
+  
+  if(chrome.app.window){
+    $.getJSON('template.json', function(localData){
+      chrome.storage.local.set({pbBMC:localData}, function(cb){});
     });
+    //ChromeApp
+//    var existeStorage = 0;
+//    chrome.storage.local.get('pbBMC', function(cb){
+//      existeStorage = 1;
+//      console.log(cb);
+//    });
+//    if( !existeStorage ){
+//      $.getJSON('template.json', function(localData){
+//        chrome.storage.local.set({pbBMC:localData}, function(cb){});
+//      });
+//    }
+    
+//    chrome.storage.local.get('pbBMC', function(localData){
+//      if (chrome.extension.lastError) {
+//        alert('An error occurred: ' + chrome.extension.lastError.message);
+//        chrome.storage.local.set({pbBMC:"localData"}, function(cb){
+//          console.log(localData);
+//        });
+//      }
+//    });
+    
+//    chrome.storage.local.get('pbBMC', function(localData){
+//      if(localData == null){
+//        $.getJSON('template.json', function(localData){
+//          chrome.storage.local.set({pbBMC:localData}, function(localData){});
+//        });
+//      }
+//    });
+  }else{
+    //WebApp
+    var localData = JSON.parse(localStorage.getItem("pbBMC"));
+//    if(localData == null){
+//      $.getJSON('template.json', function(localData){
+//        localStorage.setItem("pbBMC", JSON.stringify(localData));
+//      });
+//    }
   }
   $scope.localdata = localData;
-});
-
-app.controller("viewController", function($scope, $routeParams, $location) {
-  $scope.params = $routeParams;
-  
-  //Read localstorage
-  var localData = JSON.parse(localStorage.getItem("pbBMC"));
-  if(localData !== undefined)
-    $scope.textMD = localData[$routeParams.boxname];
-  
-  //Read boxes information
-  $.getJSON( "boxes.json", function( data ) {
-    $scope.box = data[$routeParams.boxname];
-    $scope.boxes = data;
-    $scope.$apply();
-  });
-  
-  //Write localstorage
-  if( $location.path().match('\/edit\/') ) {
-    setInterval(
-      function () {
-        localData[$routeParams.boxname] = $('textarea').val();
-        localStorage.setItem("pbBMC", JSON.stringify(localData));
-      },
-      3000
-    );
-  }
 });

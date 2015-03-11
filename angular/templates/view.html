@@ -1,7 +1,13 @@
-<div class="_view" ngKeyup="changeSlide()" slider>
-  <div class="col-lg-8 col-lg-offset-2">
-    <h1><i class="fa {{box.icon}}"></i> {{params.boxname}} <small>{{box.subtitle}}</small></h1>
+<div class="_view" slider>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+    <h1><i class="fa {{currentBox.icon}}"></i> {{currentBox.title}} <small>{{currentBox.subtitle}}</small></h1>
     <hr>
-    <div id="MD-{{params.boxname}}" class="iiMdPreview view" textarea-name="textarea" text="{{textMD}}"></div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8 col-lg-offset-2">
+      <div loadstorage marked="textMD"></div>
+    </div>
   </div>
 </div>

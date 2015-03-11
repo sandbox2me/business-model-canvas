@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body ng-app="pbCanvas">
+<body ng-app="pbCanvas" ng-csp>
   
   <!-- Elements -->
   <div id="sidemenu-bg" class="sidemenu-bg hide"></div>
@@ -37,11 +37,15 @@
   <script src="bower_components/marked/lib/marked.js"></script>
   <script src="bower_components/angular-markdown-preview/markdown_preview.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-marked/angular-marked.js"></script>
   <script src="components/menu/habr.js"></script>
   
   <!-- AngularJS -->
   <script src="app.js"></script>
+  <script src="angular/controllers/viewController.js"></script>
   <script src="angular/directives/iiMdPreview.js"></script>
+  <script src="angular/directives/loadstorage.js"></script>
+  <script src="angular/directives/savestorage.js"></script>
   <script src="angular/directives/slider.js"></script>
 </body>
 </html>

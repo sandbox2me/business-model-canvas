@@ -1,0 +1,77 @@
+{
+  "keyPartness": {
+    "key":"keyPartness",
+    "title": "Key partness",
+    "subtitle": "Asociaciones clave",
+    "icon": "fa-venus-mars",
+    "explanation": "",
+    "defaultText":"#Hola mundo!"
+  },
+  
+  "keyActivities": {
+    "key":"keyActivities",
+    "title": "Key activities",
+    "subtitle": "Actividades Clave",
+    "icon": "fa-puzzle-piece",
+    "explanation": "",
+    "defaultText":"#Hola mundo!"
+  },
+  
+  "keyResorces": {
+    "key":"keyResorces",
+    "title": "Key resorces",
+    "subtitle": "Recursos clave",
+    "icon": "fa-globe",
+    "explanation": "",
+    "defaultText":"#Hola mundo!"
+  },
+  
+  "valueProposition": {
+    "key":"valueProposition",
+    "title": "Value proposition",
+    "subtitle": "Propuestas de valor",
+    "icon": "fa-gift",
+    "explanation": "",
+    "defaultText":"#Hola mundo!"
+  },
+  "customerRelationship": {
+    "key":"customerRelationship",
+    "title": "Customer relationship",
+    "subtitle": "Relaciones con los clientes",
+    "icon": "fa-heart-o",
+    "explanation": "",
+    "defaultText":"#Hola mundo!"
+  },
+  "channels": {
+    "key":"channels",
+    "title": "Channels",
+    "subtitle": "Canales",
+    "icon": "fa-truck",
+    "explanation": "",
+    "defaultText":"#Hola mundo!"
+  },
+  "customerSegments": {
+    "key":"customerSegments",
+    "title": "Customer segments",
+    "subtitle": "Segmentos del mercado",
+    "icon": "fa-crosshairs",
+    "explanation": "",
+    "defaultText":"#Hola mundo!"
+  },
+  "costStructure": {
+    "key":"costStructure",
+    "title": "Cost structure",
+    "subtitle": "Estructura de costos",
+    "icon": "fa-credit-card",
+    "explanation": "",
+    "defaultText":"#Hola mundo!"
+  },
+  "revenueStreams": {
+    "key":"revenueStreams",
+    "title": "Revenue streams",
+    "subtitle": "Fuentes de ingresos",
+    "icon": "fa-calculator",
+    "explanation": "",
+    "defaultText":"#Hola mundo!"
+  }
+}
