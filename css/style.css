@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  overflow-y: visible;
 }
 body {
   margin: 0px;
@@ -136,8 +137,7 @@ div.tooltip[role="tooltip"] .tooltip-inner ul li {
   overflow-y: scroll;
 }
 ._edit textarea {
-  border: 1px solid #ccc;
-  height: calc(100% - 60px);
+  padding: 9px;
 }
 @media only screen and (min-width: 320px) {
   div,
