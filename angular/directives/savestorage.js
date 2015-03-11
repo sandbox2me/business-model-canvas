@@ -16,16 +16,7 @@ angular.module('pbCanvas')
           if(chrome.app.window){
             //ChromeApp
             chrome.storage.local.get('pbBMC', function(localData){
-              console.log('Antes: ' + localData.pbBMC);
-              //Aux
               localData.pbBMC[scope.currentBox.key] = $('textarea').val();
-              console.log('Despues: ' + localData.pbBMC[scope.currentBox.key]);
-              
-//              //Remove
-//              chrome.storage.local.remove("pbBMC", function(aux){
-//                console.log('remove', aux);
-//              });
-              
               //Set
               chrome.storage.local.set({pbBMC:localData.pbBMC}, function(cb){
                 console.log('Setting data'+cb);
@@ -39,7 +30,7 @@ angular.module('pbCanvas')
           }
         };
         
-        $("#piero").markdown({
+        $('textarea').markdown({
           autofocus:false,
           savable:false,
           additionalButtons: [
@@ -49,6 +40,7 @@ angular.module('pbCanvas')
                 name: "cmdSave",
                 title: "Save",
                 icon: "glyphicon glyphicon-floppy-save",
+                height: '100%',
                 callback: function(){
                   scope.saveData();
                   $('textarea').focus();
@@ -58,14 +50,6 @@ angular.module('pbCanvas')
             }]
           ]
         });
-        
-        
-        /*
-        setInterval(function(){
-          
-          
-        }, 3000);
-        */
       }
     };
   });

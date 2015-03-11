@@ -37,12 +37,6 @@ angular.module('pbCanvas')
           'revenueStreams'
         ];
         
-        //Set height to textarea and mirror div
-//        setTimeout(function(){
-//          $('textarea, ._edit .col-lg-6:last-child').css('height', $(window).height() - 150);
-//        }, 120);
-        
-        
         //Change slide on arrow key Up
         $(window).on('keyup', function(e){
           

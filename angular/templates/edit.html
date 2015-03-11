@@ -2,7 +2,6 @@
   <div class="col-lg-12">
     <h1><i class="fa {{currentBox.icon}}"></i> {{currentBox.title}} <small>{{currentBox.subtitle}}</small></h1>
     <hr>
-    <textarea id="piero" data-provide="markdown" savestorage ng-blur="saveData();">{{textMD}}</textarea>
-<!--    <div id="MD-{{params.boxname}}" class="iiMdPreview edit" textarea-name="textarea" text="{{textMD}}"></div>-->
+    <textarea data-provide="markdown" savestorage ng-blur="saveData();">{{textMD}}</textarea>
   </div>
 </div>
