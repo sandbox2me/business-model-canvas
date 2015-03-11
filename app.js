@@ -21,7 +21,7 @@ app.config(function($routeProvider) {
       })  
       .when('/', {
         templateUrl: 'angular/templates/canvas.html',
-        controller: 'mainController'
+        //controller: 'mainController'
       })
       // contact page
       .when('/contact', {
@@ -61,11 +61,11 @@ app.config(function($routeProvider) {
 
 app.controller("mainController", function($scope, $routeParams, $location) {
   //Setting up defaults values
-  var localData = 'PieroLocaldata';
+  //var localData = 'PieroLocaldata';
   
   if(chrome.app.window){
-    $.getJSON('template.json', function(localData){
-      chrome.storage.local.set({pbBMC:localData}, function(cb){});
+    $.getJSON('template.json', function(jsonData){
+      chrome.storage.local.set({pbBMC:jsonData}, function(cb){});
     });
     //ChromeApp
 //    var existeStorage = 0;
@@ -104,5 +104,6 @@ app.controller("mainController", function($scope, $routeParams, $location) {
 //      });
 //    }
   }
-  $scope.localdata = localData;
+  //$scope.localdata = localData;
+  console.log('mainController');
 });
