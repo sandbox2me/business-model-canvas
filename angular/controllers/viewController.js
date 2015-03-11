@@ -5,7 +5,8 @@ app.controller("viewController", function($scope, $routeParams, $location) {
   $.getJSON( "canvasAttrs.json", function( data ) {
     $scope.currentBox = data[$routeParams.boxname];
     $scope.boxes = data;
-    
     $scope.$apply();
+    console.log('ViewController');
+    console.log('------------------');
   });
 });

@@ -11,6 +11,7 @@ angular.module('pbCanvas')
     return{
       restrict: 'A',
       link: function postLink(scope, element, attrs){
+        console.log('slider');
         //Read boxes information
         if( location.path().match(/view/gi) ) {
           scope.currentBox = location.path().replace('/view/', '');
@@ -65,7 +66,6 @@ angular.module('pbCanvas')
           }
           scope.$apply();
         });
-        
       }
     };
   }]);

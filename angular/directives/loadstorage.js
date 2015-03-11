@@ -10,6 +10,7 @@ angular.module('pbCanvas')
     return {
       restrict: 'A',
       link: function(scope, element, attrs) {
+        console.log('loadstorage');
         var localData = '';
         if(chrome.app.window){
           //ChromeApp
@@ -17,7 +18,7 @@ angular.module('pbCanvas')
             currentBox = location.path().replace('/view/', '');
             currentBox = currentBox.replace('/edit/', '');
             scope.textMD = localData.pbBMC[currentBox];
-            console.log(localData, currentBox, scope.textMD);
+            //console.log(localData, currentBox, scope.textMD);
             scope.$apply();
           });
         }else{

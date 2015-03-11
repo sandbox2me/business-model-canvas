@@ -16,13 +16,15 @@ angular.module('pbCanvas')
       scope: {},
       link: function(scope, element, attrs) {
         
-        if (attrs.url)
-          scope.initFromUrl(attrs.url);
+          console.log('iiMdPreview');
+          if (attrs.url)
+            scope.initFromUrl(attrs.url);
+
+          if (attrs.text)
+            scope.initFromText(attrs.text);
+
+          scope.textareaName = attrs.textareaName;
         
-        if (attrs.text)
-          scope.initFromText(attrs.text);
-        
-        scope.textareaName = attrs.textareaName;
       }
     };
   });
