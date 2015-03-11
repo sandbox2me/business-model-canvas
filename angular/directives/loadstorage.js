@@ -1,8 +1,8 @@
 /**
  * @ngdoc directive
- * @name anyandgoApp.directive:iiMdPreview
+ * @name pbCanvas.directive:loadstorage
  * @description
- * # Se reescribe la directiva publicada por angular-markdown-preview iiMdPreview (https://github.com/evgenyneu/angular-markdown-preview)
+ * # Load data from localstorage
  */
 angular.module('pbCanvas')
   //.directive('loadstorage', function() {
