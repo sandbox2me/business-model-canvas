@@ -6,7 +6,5 @@ app.controller("viewController", function($scope, $routeParams, $location) {
     $scope.currentBox = data[$routeParams.boxname];
     $scope.boxes = data;
     $scope.$apply();
-    console.log('ViewController');
-    console.log('------------------');
   });
 });

@@ -39,7 +39,7 @@ angular.module('pbCanvas')
           }
         };
         
-        $("#piero").markdown({
+        $('textarea').markdown({
           autofocus:false,
           savable:false,
           additionalButtons: [
@@ -49,6 +49,7 @@ angular.module('pbCanvas')
                 name: "cmdSave",
                 title: "Save",
                 icon: "glyphicon glyphicon-floppy-save",
+                height: '100%',
                 callback: function(){
                   scope.saveData();
                   $('textarea').focus();
