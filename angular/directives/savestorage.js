@@ -11,15 +11,15 @@ angular.module('pbCanvas')
       link: function(scope, element, attrs) {
         console.log('savestorage');
         var localData = '';
-        setInterval(function(){
-          
+        
+        scope.saveData = function(){
           if(chrome.app.window){
             //ChromeApp
             chrome.storage.local.get('pbBMC', function(localData){
-              console.log('Antes: ' + localData);
+              console.log('Antes: ' + localData.pbBMC);
               //Aux
-              localData.pbBMC[scope.currentBox.key] = element.find('textarea').val();
-              console.log('Despues: ' + localData);
+              localData.pbBMC[scope.currentBox.key] = $('textarea').val();
+              console.log('Despues: ' + localData.pbBMC[scope.currentBox.key]);
               
 //              //Remove
 //              chrome.storage.local.remove("pbBMC", function(aux){
@@ -27,8 +27,8 @@ angular.module('pbCanvas')
 //              });
               
               //Set
-              chrome.storage.local.set({pbBMC:localData.pbBMC}, function(localData){
-                console.log('Getting data');
+              chrome.storage.local.set({pbBMC:localData.pbBMC}, function(cb){
+                console.log('Setting data'+cb);
               });
             });
           }else{
@@ -37,7 +37,35 @@ angular.module('pbCanvas')
 //            localData[scope.currentBox.key] = element.find('textarea').val();
 //            localStorage.setItem("pbBMC", JSON.stringify(localData));
           }
+        };
+        
+        $("#piero").markdown({
+          autofocus:false,
+          savable:false,
+          additionalButtons: [
+            [{
+              name: "groupCustom",
+              data: [{
+                name: "cmdSave",
+                title: "Save",
+                icon: "glyphicon glyphicon-floppy-save",
+                callback: function(){
+                  scope.saveData();
+                  $('textarea').focus();
+                }
+
+              }]
+            }]
+          ]
+        });
+        
+        
+        /*
+        setInterval(function(){
+          
+          
         }, 3000);
+        */
       }
     };
   });
