@@ -61,6 +61,7 @@ app.config(function($routeProvider) {
 
 app.controller("mainController", function($scope, $routeParams, $location) {
   //Setting up defaults values
+  var localData = 'PieroLocaldata';
   
   if(chrome.app.window){
     $.getJSON('template.json', function(localData){
@@ -96,7 +97,7 @@ app.controller("mainController", function($scope, $routeParams, $location) {
 //    });
   }else{
     //WebApp
-    var localData = JSON.parse(localStorage.getItem("pbBMC"));
+    localData = JSON.parse(localStorage.getItem("pbBMC"));
 //    if(localData == null){
 //      $.getJSON('template.json', function(localData){
 //        localStorage.setItem("pbBMC", JSON.stringify(localData));

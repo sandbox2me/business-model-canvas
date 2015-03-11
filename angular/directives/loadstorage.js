@@ -17,6 +17,7 @@ angular.module('pbCanvas')
           chrome.storage.local.get('pbBMC', function(localData){
             currentBox = location.path().replace('/view/', '');
             currentBox = currentBox.replace('/edit/', '');
+            scope.localData = localData.pbBMC;
             scope.textMD = localData.pbBMC[currentBox];
             //console.log(localData, currentBox, scope.textMD);
             scope.$apply();

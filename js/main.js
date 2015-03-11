@@ -5,7 +5,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
   var width = 900;
   var height = 600;
 
-  chrome.app.window.create('layout.html#/view/keyPartness', {
+  chrome.app.window.create('layout.html', {
     id: 'main',
     bounds: {
 //      width: screen.availWidth,
