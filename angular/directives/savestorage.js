@@ -5,11 +5,11 @@
  * # Se reescribe la directiva publicada por angular-markdown-preview iiMdPreview (https://github.com/evgenyneu/angular-markdown-preview)
  */
 angular.module('pbCanvas')
-  .directive('lstorage', function() {
+  .directive('savestorage', function() {
     return {
       restrict: 'A',
       link: function(scope, element, attrs) {
-        console.log('lstorage');
+        console.log('savestorage');
         var localData = '';
         setInterval(function(){
           

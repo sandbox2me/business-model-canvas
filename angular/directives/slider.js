@@ -11,17 +11,17 @@ angular.module('pbCanvas')
     return{
       restrict: 'A',
       link: function postLink(scope, element, attrs){
-        
         //Read boxes information
         if( location.path().match(/view/gi) ) {
+          scope.currentBox = location.path().replace('/view/', '');
           var mode = 'view';
         }
         
         if( location.path().match(/edit/gi) ) {
+          scope.currentBox = location.path().replace('/edit/', '');
           var mode = 'edit';
         }
         var currentBox = scope.currentBox;
-        
         //Making slider
         var views = [
           'keyPartness',
@@ -36,9 +36,9 @@ angular.module('pbCanvas')
         ];
         
         //Set height to textarea and mirror div
-        setTimeout(function(){
-          $('textarea, ._edit .col-lg-6:last-child').css('height', $(window).height() - 150);
-        }, 120);
+//        setTimeout(function(){
+//          $('textarea, ._edit .col-lg-6:last-child').css('height', $(window).height() - 150);
+//        }, 120);
         
         
         //Change slide on arrow key Up
@@ -49,7 +49,6 @@ angular.module('pbCanvas')
             return false;
           
           var indexCurrentView = views.indexOf(currentBox);
-          
           switch(e.keyCode){
             case 37: //Left arrow
               if( indexCurrentView === 0)

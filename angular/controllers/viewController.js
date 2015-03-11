@@ -6,9 +6,6 @@ app.controller("viewController", function($scope, $routeParams, $location) {
     $scope.currentBox = data[$routeParams.boxname];
     $scope.boxes = data;
     
-    setTimeout(function(){
-      $scope.$apply();
-      console.log($scope.textMD);
-    }, 1);
+    $scope.$apply();
   });
 });
