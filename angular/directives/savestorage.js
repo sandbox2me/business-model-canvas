@@ -1,8 +1,8 @@
 /**
  * @ngdoc directive
- * @name anyandgoApp.directive:iiMdPreview
+ * @name pbCanvas.directive:savestorage
  * @description
- * # Se reescribe la directiva publicada por angular-markdown-preview iiMdPreview (https://github.com/evgenyneu/angular-markdown-preview)
+ * # Save data on localStorage
  */
 angular.module('pbCanvas')
   .directive('savestorage', function() {
