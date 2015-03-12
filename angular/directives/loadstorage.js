@@ -9,17 +9,29 @@ angular.module('pbCanvas')
   .directive('loadstorage', ['$location', function(location){
     return {
       restrict: 'A',
-      link: function preLink(scope, element, attrs) {
-        console.log('loadstorage');
-        var localData = '';
+      link: function (scope, element, attrs) {
+        
+        var localData = new Object;
         if(chrome.app.window){
           //ChromeApp
           chrome.storage.local.get('pbBMC', function(localData){
-            currentBox = location.path().replace('/view/', '');
-            currentBox = currentBox.replace('/edit/', '');
+            if(localData.pbBMC == undefined){ //onError
+              $.getJSON('template.json', function(jsonData){
+                chrome.storage.local.set({pbBMC:jsonData}, function(cb){});
+                localData.pbBMC = jsonData;
+              });
+              //return;
+            }
+            
+            if(location.path().match('/view/') || location.path().match('/edit/')){
+              currentBox = location.path().replace('/view/', '');
+              currentBox = currentBox.replace('/edit/', '');
+              scope.textMD = localData.pbBMC[currentBox];
+            }
+            
             scope.localData = localData.pbBMC;
-            scope.textMD = localData.pbBMC[currentBox];            
             scope.$apply();
+            
           });
         }else{
           //WebApp
