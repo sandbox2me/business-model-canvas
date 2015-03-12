@@ -11,6 +11,8 @@ Simple Bussines Model Canvas generator made in HTML5
 * Font-Awesome
 * Angular
 * JQuery
+* Google Chrome API
+* SVG
 
 ### Features
 

@@ -1,5 +1,6 @@
 {
-  "name": "pbCanvas",
+  "name": "Bussines Model Canvas",
+  "short_name": "pbCanvas",
   "description": "html5 Bussines Model Canvas",
   "version": "1.0",
   "manifest_version": 2,
