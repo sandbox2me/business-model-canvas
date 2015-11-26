@@ -1,7 +1,7 @@
 {
   "keyPartness": {
     "key":"keyPartness",
-    "title": "Key partners",
+    "title": "Key Partners",
     "subtitle": "Asociaciones clave",
     "icon": "fa-venus-mars",
     "explanation": "",
@@ -36,7 +36,7 @@
   },
   "customerRelationship": {
     "key":"customerRelationship",
-    "title": "Customer relationship",
+    "title": "Customer Relationship",
     "subtitle": "Relaciones con los clientes",
     "icon": "fa-heart-o",
     "explanation": "",
@@ -52,7 +52,7 @@
   },
   "customerSegments": {
     "key":"customerSegments",
-    "title": "Customer segments",
+    "title": "Customer Segments",
     "subtitle": "Segmentos del mercado",
     "icon": "fa-crosshairs",
     "explanation": "",
