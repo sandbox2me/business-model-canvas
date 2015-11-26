@@ -1,7 +1,7 @@
 {
   "keyPartness": {
     "key":"keyPartness",
-    "title": "Key partness",
+    "title": "Key partners",
     "subtitle": "Asociaciones clave",
     "icon": "fa-venus-mars",
     "explanation": "",
@@ -19,7 +19,7 @@
   
   "keyResorces": {
     "key":"keyResorces",
-    "title": "Key resorces",
+    "title": "Key resources",
     "subtitle": "Recursos clave",
     "icon": "fa-globe",
     "explanation": "",
